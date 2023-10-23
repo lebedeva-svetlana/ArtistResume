@@ -28,7 +28,7 @@ namespace Resume.Controllers
         [HttpGet]
         public async Task<IActionResult> Biography()
         {
-            BiographyViewModel viewModel = new()
+            EditBiographyViewModel viewModel = new()
             {
                 Markdown = await _context.Biographies.Select(e => e.Markdown).FirstAsync()
             };
@@ -38,7 +38,7 @@ namespace Resume.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SaveBiography(BiographyViewModel viewModel)
+        public async Task<IActionResult> SaveBiography(EditBiographyViewModel viewModel)
         {
             Biography biography = await _context.Biographies.FirstAsync();
             biography.Markdown = viewModel.Markdown;

@@ -4,6 +4,5 @@
     {
         public string HTML { get; set; }
 
-        public string Markdown { get; set; }
     }
 }

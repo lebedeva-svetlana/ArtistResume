@@ -1,5 +1,5 @@
 ﻿@inject IViewLocalizer Localizer
-@model BiographyViewModel
+@model EditBiographyViewModel
 
 @{
     ViewData["Title"] = Localizer["EditBiography"];
@@ -23,21 +23,32 @@
                 <button onclick="alignRight()" type="button"><i class="fa fa-align-right"></i></button>
                 <button onclick="alignJustify()" type="button"><i class="fa fa-align-justify"></i></button>
             </div>
-            <div class="rightline-menubar">
-                <button onclick="setH2()" type="button"><i class="fa fa-header"></i></button>
+            <div class="rightline-menubar h-icon">
+                <button onclick="setH2()" type="button">H1</button>
+                <button onclick="setH3()" type="button">H2</button>
+                <button onclick="setH4()" type="button">H3</button>
                 @*<button onclick="setUl()"><i class="fa fa-list-ul"></i></button>
                 <button onclick="setOl()"><i class="fa fa-list-ol"></i></button>*@
             </div>
+            <div class="rightline-menubar h-icon">
+                <button onclick="addQuote()" type="button"><i class="fa fa-quote-right"></i></button>
+            </div>
             <div class="menubar-group">
                 <button onclick="addLink()" type="button"><i class="fa fa-link"></i></button>
-
+                @*                <button type="button"><i class="fa fa-file-image-o"></i></button>*@
             </div>
         </div>
         <textarea class="editor-textarea" rows="20" asp-for="@Model.Markdown"></textarea>
     </div>
 </form>
 
+@*<form enctype="multipart/form-data" method="post">
+    <input asp-for="@Model.NewFile" type="file">
+    <span asp-validation-for="@Model.NewFile"></span>
+    <input asp-page-handler="Upload" type="submit" value="Upload" />
+</form>*@
+
 @section scripts {
-    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <script src="~/js/editorMenubar.js" asp-append-version="true"></script>
 }
 
