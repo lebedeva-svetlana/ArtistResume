@@ -56,6 +56,18 @@ function setH2() {
     setStyle('## ', '');
 }
 
+function setH3() {
+    setStyle('### ', '');
+}
+
+function setH4() {
+    setStyle('#### ', '');
+}
+
+function addQuote() {
+    setStyle('>  ', '');
+}
+
 function alignCenter() {
     setStyle('<span style="text-align: center;">', '</span>');
 }

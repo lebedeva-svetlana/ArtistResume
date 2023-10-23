@@ -236,6 +236,10 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
   text-decoration: none;
 }
 
+.h-icon button {
+  font-weight: 600;
+}
+
 .contacts-container p, .biography-container {
   margin: 0 0 1em 0;
   text-align: justify;
@@ -511,11 +515,6 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
 }
 .login-container .login-button {
   margin: 5px 0 0 0;
-}
-
-.biography-editor-container {
-  /*    display: flex;
-  flex-direction: column;*/
 }
 
 .editor-container {
