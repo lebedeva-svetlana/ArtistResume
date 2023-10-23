@@ -1,0 +1,579 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
+.logout-button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .login-container .login-button, .contact-input-container .contact-input-button {
+  border: none;
+  width: min-content;
+}
+
+.login-container .login-button, .contact-input-container .contact-input-button {
+  padding: 5px 14px 5px 15px;
+}
+
+.editor-container .menubar-group button, .editor-container .rightline-menubar button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 15px;
+}
+
+.profile-dropdown-container, .language-dropdown-container {
+  margin: 0;
+}
+.profile-dropdown-container .dropdown, .language-dropdown-container .dropdown {
+  display: inline-block;
+  position: relative;
+}
+.profile-dropdown-container .dropdown:hover .dropdown-menu, .language-dropdown-container .dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 10;
+}
+.profile-dropdown-container .dropdown-title, .language-dropdown-container .dropdown-title {
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+}
+.profile-dropdown-container .dropdown-icon, .language-dropdown-container .dropdown-icon {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  margin: 0 0 0 5px;
+}
+.profile-dropdown-container .dropdown-menu, .language-dropdown-container .dropdown-menu {
+  box-shadow: 0px 15px 10px 2px rgba(34, 60, 80, 0.2);
+  display: none;
+  position: absolute;
+}
+.profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
+  padding: 0;
+}
+.profile-dropdown-container .dropdown-choice, .language-dropdown-container .dropdown-choice {
+  margin: 15px 5px 15px 5px;
+}
+
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+.logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
+  border: none;
+  width: min-content;
+}
+
+.login-container .login-button, .contact-input-container .contact-input-button {
+  padding: 5px 14px 5px 15px;
+}
+
+.editor-container .menubar-group button, .editor-container .rightline-menubar button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 15px;
+}
+
+.profile-dropdown-container, .language-dropdown-container {
+  margin: 0;
+}
+.profile-dropdown-container .dropdown, .language-dropdown-container .dropdown {
+  display: inline-block;
+  position: relative;
+}
+.profile-dropdown-container .dropdown:hover .dropdown-menu, .language-dropdown-container .dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 10;
+}
+.profile-dropdown-container .dropdown-title, .language-dropdown-container .dropdown-title {
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+}
+.profile-dropdown-container .dropdown-icon, .language-dropdown-container .dropdown-icon {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  margin: 0 0 0 5px;
+}
+.profile-dropdown-container .dropdown-menu, .language-dropdown-container .dropdown-menu {
+  box-shadow: 0px 15px 10px 2px rgba(34, 60, 80, 0.2);
+  display: none;
+  position: absolute;
+}
+.profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
+  padding: 0;
+}
+.profile-dropdown-container .dropdown-choice, .language-dropdown-container .dropdown-choice {
+  margin: 15px 5px 15px 5px;
+}
+
+/*------------------ COLOR --------------------*/
+/*------------------ FONT --------------------*/
+/*------------------ OFFSET --------------------*/
+/*------------------ PADDING --------------------*/
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+/*------------------ TEXT LINE --------------------*/
+/*------------------ SIZE --------------------*/
+/*------------------ BOX SHADOW --------------------*/
+/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+/*------------------ BORDER CORNER --------------------*/
+/** {
+    border: 1px solid grey;
+}*/
+/*------------------ TAGS --------------------*/
+html {
+  font-family: "Commissioner", sans-serif;
+  font-size: 100%;
+}
+
+header {
+  padding: 0 20px 0 20px;
+  width: min-content;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+}
+
+input, textarea {
+  padding: 5px;
+}
+
+/*------------------ CURSOR --------------------*/
+button:hover, .dropdown-title:hover, .dropdown-choice:hover, .login-link:hover {
+  cursor: pointer;
+}
+
+/*------------------ BORDER CORNER --------------------*/
+input, textarea, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .dropdown-menu {
+  border-radius: 4px;
+}
+
+/*------------------ TEXT --------------------*/
+header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+  text-transform: uppercase;
+}
+
+header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link a {
+  text-decoration: none;
+}
+
+.contacts-container p, .biography-container {
+  margin: 0 0 1em 0;
+  text-align: justify;
+}
+
+/*------------------ EFFECT --------------------*/
+.work-link {
+  transition: opacity 0.3s;
+}
+.work-link:hover {
+  opacity: 0.7;
+  color: #1E2022;
+}
+
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .login-container .login-button:hover, .contact-input-container .contact-input-button:hover, .editor-container .menubar-group button:hover, .editor-container .rightline-menubar button:hover, .login-link:hover {
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+
+/*------------------ COLOR --------------------*/
+html, a, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .login-container {
+  color: #1E2022;
+}
+
+.dropdown-menu, .dropdown-menu button {
+  background-color: white;
+}
+
+header, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button {
+  background-color: #F0F5F9;
+}
+
+.logout-button {
+  background-color: transparent;
+}
+
+.validation-summary-errors, .field-validation-error {
+  color: #ff0000;
+}
+
+input, textarea {
+  border: 1px solid #1E2022;
+}
+input:focus, textarea:focus {
+  outline: 1px solid #1E2022;
+}
+input.input-validation-error, input.input-validation-error:focus, textarea.input-validation-error, textarea.input-validation-error:focus {
+  border: 1px solid #ff0000;
+}
+
+/*------------------ FONT --------------------*/
+h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+  font-family: "Ysabeau SC", sans-serif;
+}
+
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+.author-name-title, .work-title {
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+.dropdown, .dropdown-icon, .profile-dropdown-container a, .login-link {
+  font-size: 1.1em;
+  line-height: 1.1;
+}
+
+.social-list, .nav-list {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+
+.editor-menubar {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+
+.work-description, .work-comment, .contacts-container p, .biography-container {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.contact-input-container {
+  font-size: 1em;
+  line-height: 1;
+}
+
+.contacts-container span, .contact-input-container span {
+  font-size: 1.3em;
+  line-height: 1.3;
+}
+
+.login-container {
+  font-size: 1.3em;
+  line-height: 1.3;
+}
+
+.login-container .validation-summary-errors {
+  font-size: 0.7em;
+  line-height: 0.7;
+}
+
+.login-container .field-validation-error {
+  font-size: 0.6em;
+  line-height: 0.6;
+}
+
+/*TODO: @media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}*/
+/*------------------ LEFT BAR --------------------*/
+.author-name-title {
+  margin: 20px 0 20px 0;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+}
+.nav-list div {
+  margin: 0 0 15px 0;
+}
+
+.social-list {
+  display: grid;
+  align-items: center;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, 1.4em);
+  margin: 15px 0 0 0;
+  padding: 0;
+}
+.social-list a, .social-list div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+.social-list div {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.underline-nav {
+  border-bottom: 1px solid #1E2022;
+  margin: 0;
+  padding: 0 0 15px 0;
+}
+
+/*------------------ MAIN CONTENT --------------------*/
+.content-container {
+  width: 100%;
+  margin: 20px 40px 40px 40px;
+}
+
+.works {
+  /*    display: grid;
+  grid-template-columns: repeat( auto-fit, minmax($work-min-w, 1fr));
+  grid-gap: $content-o;*/
+  margin: 0 auto;
+}
+
+.work-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-template-rows: 1fr auto;
+  margin: 0 0 40px 0;
+  width: 300px;
+  /*TODO: Size of images*/
+  /*.work-image-container {
+      max-width: 100em;
+      max-height: 100em;
+    }*/
+}
+.work-container .work-image {
+  max-width: 100%;
+  object-fit: contain;
+}
+.work-container .work-title {
+  font-weight: 400;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+.work-container .work-text, .work-container .work-comment {
+  margin: 20px 0 0 0;
+}
+.work-container .work-description {
+  margin: 0;
+  text-align: justify;
+}
+.work-container .work-comment {
+  font-style: italic;
+}
+
+.contacts-container p {
+  display: flex;
+  align-items: center;
+}
+.contacts-container span {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0 5px 0 0;
+}
+
+.contacts-container p, .biography-container p {
+  margin: 0 0 1em 0;
+}
+
+.contact-input-container {
+  width: min-content;
+}
+.contact-input-container input {
+  min-width: 250px;
+}
+.contact-input-container span {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0 5px 0 0;
+}
+.contact-input-container .contact-input-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-input-container .contact-input {
+  display: flex;
+  align-items: center;
+  margin: 0 0 15px 0;
+}
+.contact-input-container .contact-input-button {
+  align-self: center;
+}
+
+.login-container, .login-group {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.login-container {
+  height: 100vh;
+  width: 100vw;
+}
+.login-container .login-input {
+  display: flex;
+  flex-direction: column;
+}
+.login-container .login-input input {
+  margin: 0 0 5px 0;
+}
+.login-container .login-input, .login-container .validation-summary-errors {
+  margin: 0 0 15px 0;
+}
+.login-container .validation-summary-errors ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.login-container .login-button {
+  margin: 5px 0 0 0;
+}
+
+.biography-editor-container {
+  /*    display: flex;
+  flex-direction: column;*/
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+}
+.editor-container .editor-menubar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-gap: 10px;
+  margin: 0 0 10px 0;
+}
+.editor-container .menubar-group, .editor-container .rightline-menubar {
+  display: flex;
+  gap: 10px;
+}
+.editor-container .menubar-group button, .editor-container .rightline-menubar button {
+  width: 1.2em;
+  height: 1.2em;
+}
+.editor-container .rightline-menubar {
+  border-right: 1px solid #1E2022;
+  padding: 0 10px 0 0;
+}
+
+.editor-container .editor-textarea {
+  height: 390px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/*------------------ TOP BAR --------------------*/
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 20px 20px 0;
+}
+
+.language-dropdown-container .dropdown-menu {
+  min-width: 55px;
+}
+
+.profile-dropdown-container {
+  margin: 0 0 0 20px;
+}
+.profile-dropdown-container .dropdown-menu {
+  min-width: 100px;
+}
+
+.logout-button {
+  padding: 0;
+}
+
+.login-link {
+  margin: 0 0 0 20px;
+  padding: 0 0 0 5px;
+}

@@ -1,0 +1,14 @@
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@model BiographyViewModel
+
+@{
+    ViewData["Title"] = @SharedLocalizer["Biography"];
+}
+
+<div class="biography-container">
+    @Html.Raw(@Model.HTML)
+</div>
+
+
+

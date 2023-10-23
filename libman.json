@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "sass.js@0.11.1",
+      "destination": "wwwroot/lib/sass.js/"
+    },
+    {
+      "library": "editor.js@2.26.5",
+      "destination": "wwwroot/lib/editor.js/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "@editorjs/header@2.7.0",
+      "destination": "wwwroot/lib/editorjs/header/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "@editorjs/list@1.7.0",
+      "destination": "wwwroot/lib/editorjs/list/"
+    }
+  ]
+}

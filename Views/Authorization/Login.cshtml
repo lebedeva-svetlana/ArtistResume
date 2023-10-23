@@ -1,0 +1,42 @@
+﻿@inject IViewLocalizer Localizer
+@model AuthorizationViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = Localizer["Login"];
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/normalize.css" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+</head>
+<body>
+    <main>
+        <div class="login-container">
+            <form method="post">
+                <div class="login-group">
+                    <div class="login-input">
+                        <input asp-for="@Model.Email">
+                        <span asp-validation-for="@Model.Email"></span>
+                    </div>
+                    <div class="login-input">
+                        <input asp-for="@Model.Password">
+                        <span asp-validation-for="@Model.Password"></span>
+                    </div>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <button type="submit" class="login-button">@Localizer["Login"]</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+
+@*https://localhost:7122/Authorization/Login*@
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

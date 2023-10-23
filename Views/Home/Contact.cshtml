@@ -1,0 +1,31 @@
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@model ContactViewModel
+
+@{
+    ViewData["Title"] = @SharedLocalizer["Contact"];
+}
+
+<div class="contacts-container">
+    @if (Model.Contact.Name is not null)
+    {
+        <p>
+            <span class="fa fa-user" aria-hidden="true"></span>
+            @Model.Contact.Name
+        </p>
+    }
+    @if (Model.Contact.TelephoneNumber is not null)
+    {
+        <p>
+            <span class="fa fa-phone" aria-hidden="true"></span>
+            <a href="tel:@Model.Contact.TelephoneNumber">@Model.Contact.TelephoneNumber</a>
+        </p>
+    }
+    @if (Model.Contact.Email is not null)
+    {
+        <p>
+            <span class="fa fa-envelope" aria-hidden="true"></span>
+            <a href="mailto:@Model.Contact.Email">@Model.Contact.Email</a>
+        </p>
+    }
+</div>

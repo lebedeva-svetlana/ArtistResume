@@ -1,0 +1,149 @@
+﻿@import "_vars.scss";
+@import "_parents.scss";
+@import "_mixins.scss";
+
+/** {
+    border: 1px solid grey;
+}*/
+
+/*------------------ TAGS --------------------*/
+
+html {
+    font-family: $text-f;
+    font-size: 100%;
+}
+
+header {
+    padding: 0 $max-o 0 $max-o;
+    width: min-content;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+input, textarea {
+    padding: $input-p;
+}
+
+/*------------------ CURSOR --------------------*/
+button, .dropdown-title, .dropdown-choice, .login-link {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/*------------------ BORDER CORNER --------------------*/
+
+input, textarea, %blue-button, .dropdown-menu {
+    border-radius: $border-radius;
+}
+
+/*------------------ TEXT --------------------*/
+header, %button-base, .dropdown, .work-title, .login-link {
+    text-transform: uppercase;
+}
+
+header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link a {
+    text-decoration: none;
+}
+
+.contacts-container p, .biography-container {
+    margin: 0 0 1em 0;
+    text-align: justify;
+}
+
+/*------------------ EFFECT --------------------*/
+.work-link {
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: 0.7;
+        color: $font-c;
+    }
+}
+
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, .login-link:hover {
+    transition: all .3s;
+    opacity: 0.6;
+}
+
+/*------------------ COLOR --------------------*/
+html, a, %button-base, .login-container {
+    color: $font-c;
+}
+
+.dropdown-menu, .dropdown-menu button {
+    background-color: white;
+}
+
+header, %blue-button {
+    background-color: $background-c;
+}
+
+.logout-button {
+    background-color: transparent;
+}
+
+.validation-summary-errors, .field-validation-error {
+    color: $red-c;
+}
+
+input, textarea {
+    border: 1px solid $font-c;
+
+    &:focus {
+        outline: 1px solid $font-c;
+    }
+
+    &.input-validation-error, &.input-validation-error:focus {
+        border: 1px solid $red-c;
+    }
+}
+
+/*------------------ FONT --------------------*/
+h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-link {
+    font-family: $title-f;
+}
+
+/*------------------ FONT SIZE AND TEXT LINE --------------------*/
+.author-name-title, .work-title {
+    @include font-size($title-fs, $title-fs);
+}
+
+.dropdown, .dropdown-icon, .profile-dropdown-container a, .login-link {
+    @include font-size($dropdown-fs, $dropdown-fs);
+}
+
+.social-list, .nav-list {
+    @include font-size($list-fs, $list-fs);
+}
+
+.editor-menubar {
+    @include font-size($editbar-icon-fs, $editbar-icon-fs);
+}
+
+.work-description, .work-comment, .contacts-container p, .biography-container {
+    @include font-size($text-fs, $text-tl);
+}
+
+.contact-input-container {
+    @include font-size($text-fs, $text-fs);
+}
+
+.contacts-container span, .contact-input-container span {
+    @include font-size($contact-icon-fs, $contact-icon-fs);
+}
+
+.login-container {
+    @include font-size($login-fs, $login-fs);
+}
+
+.login-container .validation-summary-errors {
+    @include font-size($error-summary-fs, $error-summary-fs);
+}
+
+.login-container .field-validation-error {
+    @include font-size($input-error-fs, $input-error-fs);
+}

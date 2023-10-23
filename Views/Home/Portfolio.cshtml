@@ -1,0 +1,29 @@
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@model PortfolioViewModel
+
+@{
+    ViewData["Title"] = @SharedLocalizer["Portfolio"];
+}
+
+<div class="works">
+    @for (int i = 0; i < Model.Works.Count(); ++i)
+    {
+        string src = $"/images/{Model.Works[i].Path}";
+        <a asp-controller="Home" asp-action="Work" class="work-link" asp-route-id="@Model.Works[i].Id">
+            <div class="work-container">
+                <img src="@src" class="work-image">
+                <div class="work-text">
+                    <h2 class="work-title">@Model.Works[i].Name</h2>
+                    <p class="work-description">@Model.Works[i].Description</p>
+                    <p class="work-comment">@Model.Works[i].Comment</p>
+                </div>
+            </div>
+        </a>
+    }
+</div>
+
+@section scripts {
+    <script src="~/lib/masonry/masonry.pkgd.js" asp-append-version="true"></script>
+    <script src="~/js/worksLayout.js"></script>
+}

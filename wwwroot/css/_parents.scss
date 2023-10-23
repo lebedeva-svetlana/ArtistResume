@@ -1,0 +1,62 @@
+﻿@import "_vars.scss";
+@import "_mixins.scss";
+
+%button-base {
+    border: none;
+    width: min-content;
+}
+
+%blue-button {
+    @extend %button-base;
+}
+
+%blue-text-button {
+    @extend %blue-button;
+    padding: $button-text-p;
+}
+
+%blue-icon-button {
+    @extend %blue-button;
+    @include grid-center;
+    padding: $button-icon-p;
+}
+
+%dropdown-container {
+    margin: 0;
+
+    .dropdown {
+        display: inline-block;
+        position: relative;
+
+        &:hover .dropdown-menu {
+            display: block;
+            z-index: 10;
+        }
+    }
+
+    .dropdown-title {
+        display: flex;
+        align-items: center;
+        padding: 0 $min-o 0 $min-o;
+    }
+
+    .dropdown-icon {
+        @include grid-center;
+        margin: 0 0 0 $min-o;
+    }
+
+    .dropdown-menu {
+        box-shadow: $dropdown-bs;
+        display: none;
+        position: absolute;
+
+        button {
+            @extend %button-base;
+            padding: 0;
+        }
+    }
+
+    .dropdown-choice {
+        margin: $mid-o $min-o $mid-o $min-o;
+    }
+}

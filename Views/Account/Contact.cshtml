@@ -1,0 +1,26 @@
+﻿@inject IViewLocalizer Localizer
+@model ContactViewModel
+
+@{
+    ViewData["Title"] = Localizer["EditContact"];
+}
+
+<div class="contact-input-container">
+    <form method="post">
+        <div class="contact-input-group">
+            <div class="contact-input">
+                <span class="fa fa-user" aria-hidden="true"></span>
+                <input asp-for="@Model.Contact.Name">
+            </div>
+            <div class="contact-input">
+                <span class="fa fa-phone" aria-hidden="true"></span>
+                <input asp-for="@Model.Contact.TelephoneNumber">
+            </div>
+            <div class="contact-input">
+                <span class="fa fa-envelope" aria-hidden="true"></span>
+                <input asp-for="@Model.Contact.Email">
+            </div>
+            <button class="contact-input-button" type="submit">@Localizer["Сохранить"]</button>
+        </div>
+    </form>
+</div>

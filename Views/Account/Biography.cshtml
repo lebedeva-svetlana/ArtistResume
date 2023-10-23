@@ -1,0 +1,43 @@
+﻿@inject IViewLocalizer Localizer
+@model BiographyViewModel
+
+@{
+    ViewData["Title"] = Localizer["EditBiography"];
+}
+<form asp-action="SaveBiography" method="post">
+    <div class="editor-container">
+
+        <div class="editor-menubar">
+            <div class="rightline-menubar">
+                <button type="submit"><i class="fa fa-floppy-o"></i></button>
+            </div>
+            <div class="rightline-menubar">
+                <button onclick="setItalic()" type="button"><i class="fa fa-italic"></i></button>
+                <button onclick="setBold()" type="button"><i class="fa fa-bold"></i></button>
+                <button onclick="setStrikethrough()" type="button"><i class="fa fa-strikethrough"></i></button>
+                <button onclick="setUnderline()" type="button"><i class="fa fa-underline"></i></button>
+            </div>
+            <div class="rightline-menubar">
+                <button onclick="alignCenter()" type="button"><i class="fa fa-align-center"></i></button>
+                <button onclick="alignLeft()" type="button"><i class="fa fa-align-left"></i></button>
+                <button onclick="alignRight()" type="button"><i class="fa fa-align-right"></i></button>
+                <button onclick="alignJustify()" type="button"><i class="fa fa-align-justify"></i></button>
+            </div>
+            <div class="rightline-menubar">
+                <button onclick="setH2()" type="button"><i class="fa fa-header"></i></button>
+                @*<button onclick="setUl()"><i class="fa fa-list-ul"></i></button>
+                <button onclick="setOl()"><i class="fa fa-list-ol"></i></button>*@
+            </div>
+            <div class="menubar-group">
+                <button onclick="addLink()" type="button"><i class="fa fa-link"></i></button>
+
+            </div>
+        </div>
+        <textarea class="editor-textarea" rows="20" asp-for="@Model.Markdown"></textarea>
+    </div>
+</form>
+
+@section scripts {
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+}
+
