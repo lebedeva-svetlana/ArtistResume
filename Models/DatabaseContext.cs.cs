@@ -12,7 +12,6 @@ namespace Resume.Models
             //Database.EnsureCreated();
         }
 
-        // TODO: Изменить контакты
         public DbSet<Contact> Contacts { get; set; } = default!;
 
         public DbSet<Work> Works { get; set; } = default!;
@@ -22,6 +21,8 @@ namespace Resume.Models
         public DbSet<Biography> Biographies { get; set; } = default!;
 
         public DbSet<User> Users { get; set; } = default!;
+
+        public DbSet<StorageFile> StorageFiles { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

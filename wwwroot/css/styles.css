@@ -549,6 +549,24 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   word-break: break-word;
 }
 
+.storage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+.storage .storage-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.storage .storage-image {
+  max-width: 100%;
+  object-fit: contain;
+  max-height: 200px;
+  max-width: 200px;
+}
+
 /*------------------ TOP BAR --------------------*/
 .top-bar {
   display: flex;

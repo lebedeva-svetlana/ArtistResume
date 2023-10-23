@@ -209,6 +209,28 @@
     }
 }
 
+//
+
+.storage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
+    grid-gap: $max-o;
+
+    .storage-file {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .storage-image {
+        max-width: 100%;
+        object-fit: contain;
+        max-height: $storage-min-w;
+        max-width: $storage-min-w;
+    }
+}
+
 /*------------------ TOP BAR --------------------*/
 .top-bar {
     display: flex;

@@ -1,0 +1,19 @@
+﻿@using Resume.Views;
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@model StorageViewModel
+
+@{
+    ViewData["Title"] = Localizer["Storage"];
+}
+
+<div class="storage">
+    @for (int i = 0; i < Model.Files.Count(); ++i)
+    {
+        string src = $"/images/{Model.Files[i].Path}";
+        <div class="storage-file">
+            <img src="@src" class="storage-image">
+            <div>@Model.Files[i].Path</div>
+        </div>
+    }
+</div>

@@ -1,5 +1,4 @@
-﻿using Markdig;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resume.Models;
@@ -71,6 +70,17 @@ namespace Resume.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Contact), "Account");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Storage()
+        {
+            StorageViewModel viewModel = new()
+            {
+                Files = await _context.StorageFiles.ToListAsync()
+            };
+
+            return View(viewModel);
         }
     }
 }
