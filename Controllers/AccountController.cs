@@ -82,5 +82,27 @@ namespace Resume.Controllers
 
             return View(viewModel);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteFile(StorageViewModel viewModel)
+        {
+            StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Name == viewModel.SelectFileName);
+            _context.Remove(file);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Storage), "Account");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditFileName(StorageViewModel viewModel)
+        {
+            //StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Path == viewModel.SelectFilePath);
+            //_context.Remove(file);
+            //_context.SaveChanges();
+
+            return RedirectToAction(nameof(Storage), "Account");
+        }
     }
 }

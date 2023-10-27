@@ -7,7 +7,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 /*------------------ COLOR --------------------*/
@@ -18,7 +17,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 /*------------------ COLOR --------------------*/
@@ -29,7 +27,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 /*------------------ COLOR --------------------*/
@@ -40,15 +37,15 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
-.logout-button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .login-container .login-button, .contact-input-container .contact-input-button {
+.logout-button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, #storage-file-toolbar button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .login-container .login-button, .contact-input-container .contact-input-button {
   border: none;
   width: min-content;
+  /*    background: none;*/
 }
 
 .login-container .login-button, .contact-input-container .contact-input-button {
@@ -62,6 +59,15 @@
   align-content: center;
   justify-items: center;
   padding: 15px;
+}
+
+#storage-file-toolbar button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0.8em;
 }
 
 .profile-dropdown-container, .language-dropdown-container {
@@ -108,7 +114,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 /*------------------ COLOR --------------------*/
 /*------------------ FONT --------------------*/
@@ -118,7 +123,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 /*------------------ COLOR --------------------*/
 /*------------------ FONT --------------------*/
@@ -128,11 +132,11 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
-.logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
+.logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
   border: none;
   width: min-content;
+  /*    background: none;*/
 }
 
 .login-container .login-button, .contact-input-container .contact-input-button {
@@ -146,6 +150,15 @@
   align-content: center;
   justify-items: center;
   padding: 15px;
+}
+
+#storage-file-toolbar button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0.8em;
 }
 
 .profile-dropdown-container, .language-dropdown-container {
@@ -192,7 +205,6 @@
 /*------------------ TEXT LINE --------------------*/
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
 /*------------------ BORDER CORNER --------------------*/
 /** {
     border: 1px solid grey;
@@ -217,18 +229,23 @@ input, textarea {
   padding: 5px;
 }
 
+/*------------------ BOX SHADOW --------------------*/
+#storage-file-toolbar {
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
 /*------------------ CURSOR --------------------*/
-button:hover, .dropdown-title:hover, .dropdown-choice:hover, .login-link:hover {
+button:hover, .dropdown-title:hover, .dropdown-choice:hover, .login-link:hover, .storage-file:hover {
   cursor: pointer;
 }
 
 /*------------------ BORDER CORNER --------------------*/
-input, textarea, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .dropdown-menu {
+input, textarea, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name {
   border-radius: 4px;
 }
 
 /*------------------ TEXT --------------------*/
-header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
   text-transform: uppercase;
 }
 
@@ -254,13 +271,13 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
   color: #1E2022;
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .login-container .login-button:hover, .contact-input-container .contact-input-button:hover, .editor-container .menubar-group button:hover, .editor-container .rightline-menubar button:hover, .login-link:hover {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .login-container .login-button:hover, .contact-input-container .contact-input-button:hover, .editor-container .menubar-group button:hover, .editor-container .rightline-menubar button:hover, #storage-file-toolbar button:hover .login-link:hover, #storage-file-toolbar button:hover i {
   transition: all 0.3s;
   opacity: 0.6;
 }
 
 /*------------------ COLOR --------------------*/
-html, a, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .login-container {
+html, a, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .login-container {
   color: #1E2022;
 }
 
@@ -268,7 +285,7 @@ html, a, .logout-button, .login-container .login-button, .contact-input-containe
   background-color: white;
 }
 
-header, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button {
+header, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, #storage-file-toolbar {
   background-color: #F0F5F9;
 }
 
@@ -280,18 +297,18 @@ header, .login-container .login-button, .contact-input-container .contact-input-
   color: #ff0000;
 }
 
-input, textarea {
+input, textarea, .storage-edit-file-name {
   border: 1px solid #1E2022;
 }
-input:focus, textarea:focus {
+input:focus, textarea:focus, .storage-edit-file-name:focus {
   outline: 1px solid #1E2022;
 }
-input.input-validation-error, input.input-validation-error:focus, textarea.input-validation-error, textarea.input-validation-error:focus {
+input.input-validation-error, input.input-validation-error:focus, textarea.input-validation-error, textarea.input-validation-error:focus, .storage-edit-file-name.input-validation-error, .storage-edit-file-name.input-validation-error:focus {
   border: 1px solid #ff0000;
 }
 
 /*------------------ FONT --------------------*/
-h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
   font-family: "Ysabeau SC", sans-serif;
 }
 
@@ -316,7 +333,12 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   line-height: 1.2;
 }
 
-.work-description, .work-comment, .contacts-container p, .biography-container {
+#storage-file-toolbar {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
+
+.work-description, .work-comment, .contacts-container p, .biography-container, .storage-file-name {
   font-size: 1em;
   line-height: 1.5;
 }
@@ -397,9 +419,6 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
 }
 
 .works {
-  /*    display: grid;
-  grid-template-columns: repeat( auto-fit, minmax($work-min-w, 1fr));
-  grid-gap: $content-o;*/
   margin: 0 auto;
 }
 
@@ -411,7 +430,7 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   justify-items: center;
   grid-template-rows: 1fr auto;
   margin: 0 0 40px 0;
-  width: 300px;
+  width: 250px;
   /*TODO: Size of images*/
   /*.work-image-container {
       max-width: 100em;
@@ -421,6 +440,8 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
 .work-container .work-image {
   max-width: 100%;
   object-fit: contain;
+  max-width: 250px;
+  max-height: 250px;
 }
 .work-container .work-title {
   font-weight: 400;
@@ -559,12 +580,39 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 .storage .storage-image {
-  max-width: 100%;
   object-fit: contain;
   max-height: 200px;
   max-width: 200px;
+}
+.storage .storage-file-name {
+  margin: 6px 0 0 0;
+  max-height: 1.5em;
+  padding: 0 5px 0 5px;
+  text-align: center;
+  width: 70%;
+}
+.storage .storage-edit-file-name {
+  margin: 5px 0 0 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: pre-wrap;
+  width: 70%;
+  word-break: break-word;
+}
+
+#storage-file-toolbar {
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  z-index: 20;
+}
+#storage-file-toolbar button {
+  width: 1.2em;
+  height: 1.2em;
 }
 
 /*------------------ TOP BAR --------------------*/

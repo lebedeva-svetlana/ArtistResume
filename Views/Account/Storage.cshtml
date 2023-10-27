@@ -7,13 +7,27 @@
     ViewData["Title"] = Localizer["Storage"];
 }
 
-<div class="storage">
-    @for (int i = 0; i < Model.Files.Count(); ++i)
-    {
-        string src = $"/images/{Model.Files[i].Path}";
-        <div class="storage-file">
-            <img src="@src" class="storage-image">
-            <div>@Model.Files[i].Path</div>
-        </div>
-    }
-</div>
+<form method="post" onmouseout="unhoverFiles(event)" onmouseover="hoverFiles(event)">
+    <div class="storage">
+        @for (int i = 0; i < Model.Files.Count(); ++i)
+        {
+            string src = $"/images/{Model.Files[i].Name}";
+
+            <div class="storage-file" onmouseover="hoverFile(event)">
+                <img src="@src" class="storage-image">
+                <div class="storage-file-name" value="@Model.Files[i].Name">@Model.Files[i].Name</div>
+            </div>
+        }
+    </div>
+    <div id="storage-file-toolbar">
+        <input type="hidden" id="selected-file-path" asp-for="@Model.SelectFileName" />
+        <button onclick="editFileName()" type="button"><i class="fa fa-pencil"></i></button>
+        <button asp-action="DeleteFile" type="submit"><i class="fa fa-trash-o"></i></button>
+    </div>
+</form>
+
+
+
+@section scripts {
+    <script src="~/js/storage.js" asp-append-version="true"></script>
+}

@@ -27,8 +27,13 @@ input, textarea {
     padding: $input-p;
 }
 
+/*------------------ BOX SHADOW --------------------*/
+#storage-file-toolbar {
+    box-shadow: $storage-toolbar-bs;
+}
+
 /*------------------ CURSOR --------------------*/
-button, .dropdown-title, .dropdown-choice, .login-link {
+button, .dropdown-title, .dropdown-choice, .login-link, .storage-file {
     &:hover {
         cursor: pointer;
     }
@@ -36,7 +41,7 @@ button, .dropdown-title, .dropdown-choice, .login-link {
 
 /*------------------ BORDER CORNER --------------------*/
 
-input, textarea, %blue-button, .dropdown-menu {
+input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name {
     border-radius: $border-radius;
 }
 
@@ -68,7 +73,7 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
     }
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, .login-link:hover {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i {
     transition: all .3s;
     opacity: 0.6;
 }
@@ -78,11 +83,11 @@ html, a, %button-base, .login-container {
     color: $font-c;
 }
 
-.dropdown-menu, .dropdown-menu button {
+.dropdown-menu, .dropdown-menu button{
     background-color: white;
 }
 
-header, %blue-button {
+header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar {
     background-color: $background-c;
 }
 
@@ -94,7 +99,7 @@ header, %blue-button {
     color: $red-c;
 }
 
-input, textarea {
+input, textarea, .storage-edit-file-name {
     border: 1px solid $font-c;
 
     &:focus {
@@ -128,7 +133,11 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
     @include font-size($editbar-icon-fs, $editbar-icon-fs);
 }
 
-.work-description, .work-comment, .contacts-container p, .biography-container {
+#storage-file-toolbar {
+    @include font-size($file-toolbar-icon-fs, $file-toolbar-icon-fs);
+}
+
+.work-description, .work-comment, .contacts-container p, .biography-container, .storage-file-name {
     @include font-size($text-fs, $text-tl);
 }
 

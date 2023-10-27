@@ -20,8 +20,9 @@ $min-mid-o: 10px;
 $min-o: 5px;
 
 /*------------------ PADDING --------------------*/
-$button-text-p: 5px 14px 5px 15px;
 $button-icon-p: 15px;
+$button-icon-small-p: 0.8em;
+$button-text-p: 5px 14px 5px 15px;
 $input-p: 5px;
 
 /*------------------ FONT SIZE AND TEXT LINE --------------------*/
@@ -30,6 +31,7 @@ $dropdown-fs: 1.1;
 $editbar-icon-column-fs: 1.4;
 $editbar-icon-fs: 1.2;
 $error-summary-fs: 0.7;
+$file-toolbar-icon-fs: 1.2;
 $input-error-fs: 0.6;
 $list-fs: 1.2;
 $login-fs: 1.3;
@@ -46,11 +48,14 @@ $dropdown-language-w: 55px;
 $dropdown-profile-w: 100px;
 $editor-textarea-h: 390px;
 $work-min-w: 300px;
-$work-masonry-w: 300px;
+$work-masonry-w: 250px;
 $storage-min-w: 200px;
+$storage-min-image-w: 170px;
+$storage-edit-file-name-w: 70%;
+
 /*------------------ BOX SHADOW --------------------*/
 $dropdown-bs: 0px 15px 10px 2px rgba(34, 60, 80, 0.2);
-/*$base-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);*/
+$storage-toolbar-bs: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 
 /*------------------ BORDER CORNER --------------------*/
 $border-radius: 4px;

@@ -48,9 +48,6 @@
 }
 
 .works {
-    /*    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax($work-min-w, 1fr));
-    grid-gap: $content-o;*/
     margin: 0 auto;
 }
 
@@ -68,6 +65,8 @@
     .work-image {
         max-width: 100%;
         object-fit: contain;
+        max-width: $work-masonry-w;
+        max-height: $work-masonry-w;
     }
 
     .work-title {
@@ -209,8 +208,6 @@
     }
 }
 
-//
-
 .storage {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
@@ -221,16 +218,45 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
     }
 
     .storage-image {
-        max-width: 100%;
         object-fit: contain;
         max-height: $storage-min-w;
         max-width: $storage-min-w;
     }
+
+    .storage-file-name {
+        margin: $min-o + 1 0 0 0;
+        max-height: $text-tl + 0em;
+        padding: 0 $min-o 0 $min-o;
+        text-align: center;
+        width: $storage-edit-file-name-w;
+    }
+
+    .storage-edit-file-name {
+        margin: $min-o 0 0 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: pre-wrap;
+        width: $storage-edit-file-name-w;
+        word-break: break-word;
+    }
 }
 
+#storage-file-toolbar {
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    z-index: 20;
+
+    button {
+        @extend %icon-button;
+        @include square-size($file-toolbar-icon-fs);
+    }
+}
 /*------------------ TOP BAR --------------------*/
 .top-bar {
     display: flex;

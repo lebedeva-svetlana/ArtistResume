@@ -4,6 +4,7 @@
 %button-base {
     border: none;
     width: min-content;
+/*    background: none;*/
 }
 
 %blue-button {
@@ -19,6 +20,12 @@
     @extend %blue-button;
     @include grid-center;
     padding: $button-icon-p;
+}
+
+%icon-button {
+    @extend %button-base;
+    @include grid-center;
+    padding: $button-icon-small-p;
 }
 
 %dropdown-container {

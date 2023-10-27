@@ -11,7 +11,9 @@ namespace Resume.Models
                 .HasKey(e => e.Id)
                 .HasName("PK_StorageFile");
 
-            builder.Property(e => e.Path)
+            builder.Property(e => e.Name)
+                .IsRequired();
+            builder.Property(e => e.Extension)
                 .IsRequired();
 
             List<StorageFile> files = new()
@@ -19,32 +21,38 @@ namespace Resume.Models
                 new StorageFile
                 {
                     Id = 1,
-                    Path = $"work1.jpg"
+                    Name = $"work1",
+                    Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 2,
-                    Path = $"work2.jpg"
+                    Name = $"work2",
+                    Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 3,
-                    Path = $"work3.jpg"
+                    Name = $"work3",
+                    Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 4,
-                    Path = $"work4.jpg"
+                    Name = $"work4",
+                    Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 5,
-                    Path = $"work5.jpg"
+                    Name = $"work5",
+                    Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 6,
-                    Path = $"work6.jpg"
+                    Name = $"work6",
+                    Extension = "jpg"
                 }
             };
 
