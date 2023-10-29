@@ -56,17 +56,16 @@
     grid-template-rows: 1fr auto;
     margin: 0 0 $content-o 0;
     width: $work-masonry-w;
-    /*TODO: Size of images*/
-    /*.work-image-container {
-        max-width: 100em;
-        max-height: 100em;
-      }*/
 
     .work-image {
-        max-width: 100%;
         object-fit: contain;
         max-width: $work-masonry-w;
         max-height: $work-masonry-w;
+    }
+
+    .detail-work-image {
+        max-width: 100%;
+        object-fit: contain;
     }
 
     .work-title {
@@ -87,6 +86,11 @@
     .work-comment {
         font-style: italic;
     }
+}
+
+.detail-work-container {
+    @extend .work-container;
+    width: 100%;
 }
 
 .contacts-container {
