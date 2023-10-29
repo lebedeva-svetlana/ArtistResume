@@ -6,9 +6,9 @@ using Resume.ViewModels;
 
 namespace Resume.Controllers
 {
+    [ResponseCache(CacheProfileName = "DefaultHour")]
     public class HomeController : BaseLanguageController
     {
-        // TODO: Добавить кеширование
         public HomeController(DatabaseContext context) : base(context)
         {
         }
@@ -57,11 +57,5 @@ namespace Resume.Controllers
 
             return View(viewModel);
         }
-
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        //public IActionResult Error()
-        //{
-        //    return View();
-        //}
     }
 }

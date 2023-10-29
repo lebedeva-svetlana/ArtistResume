@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resume;
-using Resume.Filters;
 using Resume.Models;
 using System.Globalization;
 
@@ -16,7 +16,8 @@ builder.Services.Configure<RouteOptions>(options =>
     options.LowercaseUrls = true;
 });
 
-//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => options.LoginPath = "/login");
+builder.Services.AddResponseCaching();
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
     options.LoginPath = new PathString("/Authorization/Login");
@@ -45,8 +46,13 @@ builder.Services.AddRequestLocalization(options =>
     });
 });
 
-builder.Services.AddControllersWithViews()
-        //options => options.Filters.Add(new CultureFilter())))
+builder.Services.AddControllersWithViews(options =>
+        options.CacheProfiles.Add("DefaultHour",
+        new CacheProfile()
+        {
+            Duration = 3600
+        }))
+    //options => options.Filters.Add(new CultureFilter())))
     .AddDataAnnotationsLocalization()
     .AddViewLocalization();
 
@@ -65,6 +71,8 @@ app.UseHttpsRedirection();
 //    .AddRedirect(@"account[/]?$", "/account/portfolio")
 //    .AddRedirect(@"^.{0}$", "/portfolio");
 //app.UseRewriter(rules);
+
+app.UseResponseCaching();
 
 app.UseStaticFiles();
 
