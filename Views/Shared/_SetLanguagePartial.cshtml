@@ -11,12 +11,14 @@
     List<string>? cultureItems = LocalizationOptions.Value.SupportedCultures
     .Select(c => c.Name)
     .ToList();
+
+    string currentCulture = Thread.CurrentThread.CurrentCulture.ToString();
 }
 
 <div class="language-dropdown-container">
     <div class="dropdown">
         <div class="dropdown-title">
-            <div class="dropdown-title">EN</div>
+            <div class="dropdown-title">@currentCulture</div>
             <div class="dropdown-icon">
                 <span class="fa fa-sort-desc" aria-hidden="true"></span>
             </div>
