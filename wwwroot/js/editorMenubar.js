@@ -69,19 +69,19 @@ function addQuote() {
 }
 
 function alignCenter() {
-    setStyle('<span style="text-align: center;">', '</span>');
+    setStyle('<p style="text-align: center;">', '</p>');
 }
 
 function alignLeft() {
-    setStyle('<span style="text-align: left;">', '</span>');
+    setStyle('<p style="text-align: left;">', '</p>');
 }
 
 function alignRight() {
-    setStyle('<span style="text-align: right;">', '</span>');
+    setStyle('<p style="text-align: right;">', '</p>');
 }
 
 function alignJustify() {
-    setStyle('<span style="text-align: justify;">', '</span>');
+    setStyle('<p style="text-align: justify;">', '</p>');
 }
 
 function addLink() {
