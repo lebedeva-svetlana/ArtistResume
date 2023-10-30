@@ -24,7 +24,13 @@ namespace Resume.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            string url = Request.Headers["Referer"].ToString();
+            string returnUrl = url.Substring(url.LastIndexOf("/home"));
+
+            return View(new AuthorizationViewModel
+            {
+                ReturnUrl = returnUrl
+            });
         }
 
         [HttpPost]
@@ -38,14 +44,19 @@ namespace Resume.Controllers
 
             var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, true, false);
 
-            if (result.Succeeded)
-            {
-                return RedirectToAction(nameof(HomeController.Portfolio), "Home");
-            }
-            else
+            if (!result.Succeeded)
             {
                 ModelState.AddModelError("", _localizer["ErrorMessage"]);
                 return View();
+            }
+
+            if (!string.IsNullOrEmpty(viewModel.ReturnUrl) && Url.IsLocalUrl(viewModel.ReturnUrl))
+            {
+                return Redirect(viewModel.ReturnUrl);
+            }
+            else
+            {
+                return RedirectToAction(nameof(HomeController.Portfolio), "Home");
             }
         }
 

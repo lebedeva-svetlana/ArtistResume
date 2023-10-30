@@ -18,7 +18,7 @@
 <body>
     <main>
         <div class="login-container">
-            <form method="post">
+            <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
                 <div class="login-group">
                     <div class="login-input">
                         <input asp-for="@Model.Email">

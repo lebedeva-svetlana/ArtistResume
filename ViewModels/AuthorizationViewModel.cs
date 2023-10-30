@@ -11,5 +11,7 @@ namespace Resume.ViewModels
         [Display(Prompt = "Password")]
         [Required(ErrorMessage = "PasswordErrorMessage")]
         public string Password { get; set; }
+
+        public string? ReturnUrl { get; set; }
     }
 }
