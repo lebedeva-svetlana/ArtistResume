@@ -1,15 +1,24 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resume;
 using Resume.Models;
+using Resume.Services;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseContext") ?? throw new InvalidOperationException("Connection string 'DatabaseContext' not found.")));
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<DatabaseContext>();
+
+builder.Services.AddIdentityCore<User>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<DatabaseContext>();
+
+builder.Services.AddScoped<IUserInitializer, UserInitializer>();
+builder.Services.AddScoped<IUserInitializerService, UserInitializerService>();
 
 builder.Services.Configure<RouteOptions>(options =>
 {
@@ -18,7 +27,13 @@ builder.Services.Configure<RouteOptions>(options =>
 
 builder.Services.AddResponseCaching();
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+//{
+//    options.LoginPath = new PathString("/Authorization/Login");
+//    options.AccessDeniedPath = new PathString("/Home/Portfolio");
+//});
+
+builder.Services.AddAuthentication("Identity.Application").AddCookie(options =>
 {
     options.LoginPath = new PathString("/Authorization/Login");
     options.AccessDeniedPath = new PathString("/Home/Portfolio");
@@ -55,8 +70,16 @@ builder.Services.AddControllersWithViews(options =>
     //options => options.Filters.Add(new CultureFilter())))
     .AddDataAnnotationsLocalization()
     .AddViewLocalization();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+var serviceScopeFactory = app.Services.GetService<IServiceScopeFactory>();
+using (var scope = serviceScopeFactory.CreateScope())
+{
+    var service = (IUserInitializerService)scope.ServiceProvider.GetService(typeof(IUserInitializerService));
+    await service.InitializeAsync();
+}
 
 if (!app.Environment.IsDevelopment())
 {

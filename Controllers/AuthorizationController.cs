@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Resume.Models;
 using Resume.ViewModels;
-using System.Security.Claims;
 
 namespace Resume.Controllers
 {
@@ -13,30 +10,17 @@ namespace Resume.Controllers
     {
         private DatabaseContext _context;
         private readonly IStringLocalizer<AuthorizationController> _localizer;
-        //private readonly UserManager<User> _userManager;
-        //private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        //public AuthorizationController(DatabaseContext context, UserManager<User> userManager, SignInManager<User> signInManager)
-        //{
-        //    _context = context;
-        //    _userManager = userManager;
-        //    _signInManager = signInManager;
-        //}
-
-        public AuthorizationController(DatabaseContext context, IStringLocalizer<AuthorizationController> localizer)
+        public AuthorizationController(DatabaseContext context, SignInManager<User> signInManager, IStringLocalizer<AuthorizationController> localizer, UserManager<User> userManager)
         {
             _context = context;
             _localizer = localizer;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        //public IActionResult Index()
-        //{
-        //    //ViewData["AuthorName"] = _context.Contacts.Select(e => e.Name).FirstOrDefault();
-
-        //    //_works = _context.Works.ToList();
-
-        //    return View();
-        //}
         [HttpGet]
         public IActionResult Login()
         {
@@ -52,30 +36,24 @@ namespace Resume.Controllers
                 return View();
             }
 
-            User? user = await _context.Users.FirstOrDefaultAsync(e => e.Email == viewModel.Email);
+            var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, true, false);
 
-            //if (user is null || !await _userManager.CheckPasswordAsync(user, viewModel.Password))
-            //{
-            // TODO: Шифрование
-            if (user is null || user.Password != viewModel.Password)
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(HomeController.Portfolio), "Home");
+            }
+            else
             {
                 ModelState.AddModelError("", _localizer["ErrorMessage"]);
                 return View();
             }
-
-            ClaimsIdentity identity = new(CookieAuthenticationDefaults.AuthenticationScheme);
-            identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
-            ClaimsPrincipal principal = new(identity);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-            return RedirectToAction(nameof(HomeController.Portfolio), "Home");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Portfolio), "Home");
         }
     }

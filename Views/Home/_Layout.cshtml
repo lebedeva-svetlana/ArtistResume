@@ -32,7 +32,7 @@
     <div class="content-container">
         <div class="top-bar">
             @await Html.PartialAsync("_SetLanguagePartial", Model.CultureViewModel)
-            @if (Context.User.Identity.IsAuthenticated)
+            @if (User.Identity.IsAuthenticated)
             {
                 <div class="profile-dropdown-container">
                     <div class="dropdown">
