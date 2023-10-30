@@ -25,7 +25,17 @@ namespace Resume.Controllers
         public IActionResult Login()
         {
             string url = Request.Headers["Referer"].ToString();
-            string returnUrl = url.Substring(url.LastIndexOf("/home"));
+            int index = url.LastIndexOf("/home");
+
+            string returnUrl;
+            if (index == -1)
+            {
+                returnUrl = null;
+            }
+            else
+            {
+                returnUrl = url.Substring(index);
+            }
 
             return View(new AuthorizationViewModel
             {
