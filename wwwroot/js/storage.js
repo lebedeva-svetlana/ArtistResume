@@ -9,14 +9,18 @@ function hoverFile(event) {
     let margin = 6;
     let px = 'px';
 
+    let toolbar = document.getElementById('storage-file-toolbar');
+
     let name = file.querySelector('.storage-file-name');
     let image = file.querySelector('.storage-image');
-    let offset = image.getBoundingClientRect().bottom - name.getBoundingClientRect().height - margin;
 
-    let top = offset + window.scrollY + px;
-    let left = file.getBoundingClientRect().left + window.scrollX + px;
+    let yOffset = image.getBoundingClientRect().bottom - name.getBoundingClientRect().height - margin;
+    let xOffset = (file.getBoundingClientRect().width - toolbar.getBoundingClientRect().width) / 2;
 
-    let toolbar = document.getElementById('storage-file-toolbar');
+    let top = yOffset + window.scrollY + px;
+    let left = xOffset + file.getBoundingClientRect().left + window.scrollX + px;
+
+
     toolbar.style.top = top;
     toolbar.style.left = left;
 
