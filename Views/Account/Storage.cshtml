@@ -7,6 +7,12 @@
     ViewData["Title"] = Localizer["Storage"];
 }
 
+<form method="post" enctype="multipart/form-data">
+    <div class="upload-storage-file-container">
+        <input asp-for="@Model.NewFile" class="upload-storage-file-input" type="file" /><br>
+        <button class="upload-storage-file-button" type="submit" asp-action="UploadFile"><i class="fa fa-plus"></i></button>
+    </div>
+</form>
 <form method="post" id="storage-form" onmouseout="unhoverFiles(event)" onmouseover="hoverFiles(event)">
     <div class="storage">
         @for (int i = 0; i < Model.Files.Count(); ++i)

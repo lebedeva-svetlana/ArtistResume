@@ -212,6 +212,24 @@
     }
 }
 
+.upload-storage-file-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 $max-o + $min-mid-o 0;
+    align-self: center;
+
+    .upload-storage-file-input {
+        margin: 0 $min-mid-o 0 0;
+    }
+
+    .upload-storage-file-button {
+        @extend %blue-icon-button;
+        @include square-size($file-toolbar-icon-fs);
+    }
+}
+
 .storage {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));

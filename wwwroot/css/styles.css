@@ -42,7 +42,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&family=Ysabeau+SC&display=swap");
-.logout-button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .login-container .login-button, .contact-input-container .contact-input-button {
+.logout-button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .login-container .login-button, .contact-input-container .contact-input-button {
   border: none;
   width: min-content;
   /*    background: none;*/
@@ -52,7 +52,7 @@
   padding: 5px 14px 5px 15px;
 }
 
-.editor-container .menubar-group button, .editor-container .rightline-menubar button {
+.upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -133,7 +133,7 @@
 /*------------------ SIZE --------------------*/
 /*------------------ BOX SHADOW --------------------*/
 /*------------------ BORDER CORNER --------------------*/
-.logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
+.logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button {
   border: none;
   width: min-content;
   /*    background: none;*/
@@ -143,7 +143,7 @@
   padding: 5px 14px 5px 15px;
 }
 
-.editor-container .menubar-group button, .editor-container .rightline-menubar button {
+.upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -240,12 +240,12 @@ button:hover, .dropdown-title:hover, .dropdown-choice:hover, .login-link:hover, 
 }
 
 /*------------------ BORDER CORNER --------------------*/
-input, textarea, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name {
+input, textarea, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name {
   border-radius: 4px;
 }
 
 /*------------------ TEXT --------------------*/
-header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
   text-transform: uppercase;
 }
 
@@ -271,13 +271,13 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
   color: #1E2022;
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .login-container .login-button:hover, .contact-input-container .contact-input-button:hover, .editor-container .menubar-group button:hover, .editor-container .rightline-menubar button:hover, #enlarge-image-container #close-enlarge-image-button:hover, #storage-file-toolbar button:hover, #enlarge-image-container #close-enlarge-image-button:hover .login-link:hover, #storage-file-toolbar button:hover .login-link:hover, #storage-file-toolbar button:hover i {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .login-container .login-button:hover, .contact-input-container .contact-input-button:hover, .upload-storage-file-container .upload-storage-file-button:hover, .editor-container .menubar-group button:hover, .editor-container .rightline-menubar button:hover, #enlarge-image-container #close-enlarge-image-button:hover, #storage-file-toolbar button:hover, #enlarge-image-container #close-enlarge-image-button:hover .login-link:hover, #storage-file-toolbar button:hover .login-link:hover, #storage-file-toolbar button:hover i {
   transition: all 0.3s;
   opacity: 0.6;
 }
 
 /*------------------ COLOR --------------------*/
-html, a, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .login-container {
+html, a, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .login-container {
   color: #1E2022;
 }
 
@@ -285,7 +285,7 @@ html, a, .logout-button, .login-container .login-button, .contact-input-containe
   background-color: white;
 }
 
-header, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, #storage-file-toolbar {
+header, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #storage-file-toolbar button, #storage-file-toolbar {
   background-color: #F0F5F9;
 }
 
@@ -308,7 +308,7 @@ input.input-validation-error, input.input-validation-error:focus, textarea.input
 }
 
 /*------------------ FONT --------------------*/
-h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
+h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, .contact-input-container .contact-input-button, .upload-storage-file-container .upload-storage-file-button, .editor-container .menubar-group button, .editor-container .rightline-menubar button, #enlarge-image-container #close-enlarge-image-button, #storage-file-toolbar button, .profile-dropdown-container .dropdown-menu button, .language-dropdown-container .dropdown-menu button, .dropdown, .work-title, .login-link {
   font-family: "Ysabeau SC", sans-serif;
 }
 
@@ -570,6 +570,22 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.upload-storage-file-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 30px 0;
+  align-self: center;
+}
+.upload-storage-file-container .upload-storage-file-input {
+  margin: 0 10px 0 0;
+}
+.upload-storage-file-container .upload-storage-file-button {
+  width: 1.2em;
+  height: 1.2em;
 }
 
 .storage {

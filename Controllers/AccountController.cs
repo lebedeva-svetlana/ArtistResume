@@ -103,6 +103,43 @@ namespace Resume.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UploadFile(StorageViewModel viewModel)
+        {
+            if (viewModel.NewFile is null)
+            {
+                return RedirectToAction(nameof(Storage), "Account");
+            }
+
+            string extension = Path.GetExtension(viewModel.NewFile.FileName);
+
+            StorageFile image = new()
+            {
+                Name = Path.GetFileNameWithoutExtension(viewModel.NewFile.FileName),
+                Extension = extension[1..]
+            };
+
+            await _context.StorageFiles.AddAsync(image);
+            _context.SaveChanges();
+
+            try
+            {
+                string fileName = image.Id + extension;
+                string path = Path.Combine(_environment.WebRootPath, "images", fileName);
+
+                using FileStream fileStream = new(path, FileMode.Create);
+                await viewModel.NewFile.CopyToAsync(fileStream);
+            }
+            catch
+            {
+                _context.StorageFiles.Remove(image);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(Storage), "Account");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditFileName(StorageViewModel viewModel)
         {
             if (viewModel.SelectFileId == 0 || string.IsNullOrEmpty(viewModel.NewFileName))
