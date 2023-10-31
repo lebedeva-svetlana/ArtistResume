@@ -9,8 +9,11 @@ namespace Resume.Controllers
     [Authorize]
     public class AccountController : BaseLanguageController
     {
-        public AccountController(DatabaseContext context) : base(context)
+        private IWebHostEnvironment _environment;
+
+        public AccountController(DatabaseContext context, IWebHostEnvironment environment) : base(context)
         {
+            _environment = environment;
         }
 
         [HttpGet]
@@ -88,6 +91,10 @@ namespace Resume.Controllers
         public async Task<IActionResult> DeleteFile(StorageViewModel viewModel)
         {
             StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Id == viewModel.SelectFileId);
+
+            string path = Path.Combine(_environment.WebRootPath, "images", $"{file.Id}.{file.Extension}");
+            System.IO.File.Delete(path);
+
             _context.Remove(file);
             _context.SaveChanges();
 
