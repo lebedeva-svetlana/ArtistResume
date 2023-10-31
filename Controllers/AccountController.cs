@@ -9,8 +9,6 @@ namespace Resume.Controllers
     [Authorize]
     public class AccountController : BaseLanguageController
     {
-        private IWebHostEnvironment _environment;
-
         public AccountController(DatabaseContext context) : base(context)
         {
         }
