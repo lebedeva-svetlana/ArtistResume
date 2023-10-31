@@ -21,37 +21,37 @@ namespace Resume.Models
                 new StorageFile
                 {
                     Id = 1,
-                    Name = $"work1",
+                    Name = $"Алёнушка",
                     Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 2,
-                    Name = $"work2",
+                    Name = $"Витязь",
                     Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 3,
-                    Name = $"work3",
+                    Name = $"Иван-Царевич",
                     Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 4,
-                    Name = $"work4",
+                    Name = $"Ковёр-Самолёт",
                     Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 5,
-                    Name = $"work5",
+                    Name = $"Три царевны",
                     Extension = "jpg"
                 },
                 new StorageFile
                 {
                     Id = 6,
-                    Name = $"work6",
+                    Name = $"Богатыри",
                     Extension = "jpg"
                 }
             };
