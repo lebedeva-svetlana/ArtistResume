@@ -28,7 +28,7 @@ input, textarea {
 }
 
 /*------------------ BOX SHADOW --------------------*/
-#storage-file-toolbar {
+#storage-file-toolbar, .storage-image {
     box-shadow: $storage-toolbar-bs;
 }
 
@@ -73,7 +73,7 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
     }
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, %icon-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i {
     transition: all .3s;
     opacity: 0.6;
 }
@@ -87,7 +87,7 @@ html, a, %button-base, .login-container {
     background-color: white;
 }
 
-header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar {
+header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar/*, .storage-file*/ {
     background-color: $background-c;
 }
 

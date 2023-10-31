@@ -215,22 +215,22 @@
 .storage {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
-    grid-template-rows: repeat(auto-fit, $storage-min-w);
     grid-gap: $max-o;
 
     .storage-file {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: flex-end;
-        overflow: hidden;
+        align-items: center;
         max-height: 100%;
+        overflow: hidden;
+        padding: $min-mid-o;
     }
 
     .storage-image {
         object-fit: contain;
-        max-height: $storage-min-w;
-        max-width: $storage-min-w;
+        max-height: $storage-min-image-w;
+        max-width: $storage-min-image-w;
     }
 
     .storage-file-name {
@@ -262,6 +262,47 @@
         display: none;
     }
 }
+
+#black-hover {
+    background-color: black;
+    height: 100vh;
+    left: 0;
+    opacity: 0.4;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 19;
+    display: none;
+}
+
+#enlarge-image-container {
+    display: none;
+    left: 50%;
+    margin-right: -50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+
+    .enlarge-image-container-re {
+        position: relative;
+    }
+
+    #enlarge-image {
+        object-fit: contain;
+        max-height: $enlarge-storage-image-w;
+        max-width: $enlarge-storage-image-w;
+    }
+
+    #close-enlarge-image-button {
+        @extend %icon-button;
+        @include square-size($storage-close-enlarge-fs);
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
 /*------------------ TOP BAR --------------------*/
 .top-bar {
     display: flex;

@@ -1,6 +1,9 @@
 ﻿'use strict';
 
 function hoverFile(event) {
+    if (document.querySelector('#black-hover').style.display == 'block') {
+        return;
+    }
     let file = event.currentTarget;
 
     let margin = 6;
@@ -22,11 +25,17 @@ function hoverFile(event) {
 }
 
 function unhoverFiles(event) {
+    if (document.querySelector('#black-hover').style.display == 'block') {
+        return;
+    }
     let toolbar = document.getElementById('storage-file-toolbar');
     toolbar.style.visibility = 'hidden';
 }
 
 function hoverFiles(event) {
+    if (document.querySelector('#black-hover').style.display == 'block') {
+        return;
+    }
     let toolbar = document.getElementById('storage-file-toolbar');
     toolbar.style.visibility = 'visible';
 }
@@ -63,7 +72,7 @@ function checkKeys(event) {
 
     document.querySelector('#storage-form').insertBefore(input, document.querySelector('#storage-file-toolbar'));
 
-    document.removeEventListener('onkeydown', checkKeys);
+    document.removeEventListener('keydown', checkKeys);
 
     document.querySelector('#show-input-button').style.display = 'grid';
     document.querySelector('#edit-name-button').style.display = 'none';
@@ -75,4 +84,29 @@ function checkKeys(event) {
         document.querySelector('#edit-file-name-input').value = input.value;
         document.querySelector('#edit-name-button').click();
     }
+}
+
+function enlargeImage() {
+    document.getElementById('storage-file-toolbar').style.visibility = 'hidden';
+    let fileName = document.querySelector('#selected-file-path').value;
+    let imageSrc = document.querySelector(`.storage-image[image-id="${fileName}"]`).getAttribute('src');
+
+    let enlargeImageContainer = document.querySelector('#enlarge-image-container');
+    let enlargeImage = document.querySelector('#enlarge-image');
+
+    enlargeImage.setAttribute('src', imageSrc);
+    enlargeImageContainer.style.display = 'block';
+
+    let hover = document.querySelector('#black-hover');
+    hover.style.display = 'block';
+
+    hover.addEventListener('click', closeEnlargeImage);
+}
+
+function closeEnlargeImage() {
+    document.querySelector('#enlarge-image-container').style.display = 'none';
+    document.querySelector('#enlarge-image').setAttribute('src', '');
+    document.querySelector('#black-hover').style.display = 'none';
+
+    document.querySelector('#black-hover').removeEventListener('click', closeEnlargeImage);
 }

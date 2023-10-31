@@ -14,19 +14,29 @@
             string src = $"/images/{Model.Files[i].Id}.{Model.Files[i].Extension}";
 
             <div class="storage-file" onmouseover="hoverFile(event)">
-                <img src="@src" class="storage-image">
+                <img src="@src" onclick="enlargeImage()" class="storage-image" image-id="@Model.Files[i].Id">
                 <div class="storage-file-name" image-id="@Model.Files[i].Id" value="@Model.Files[i].Name">@Model.Files[i].Name</div>
             </div>
         }
     </div>
     <input asp-for="@Model.NewFileName" type="text" id="edit-file-name-input" class="storage-file-name" />
+    <div id="enlarge-image-container">
+        <div class="enlarge-image-container-rel">
+            <img id="enlarge-image">
+            <button onclick="closeEnlargeImage()" id="close-enlarge-image-button" type="button"><i class="fa fa-times"></i></button>
+        </div>
+    </div>
     <div id="storage-file-toolbar">
         <input type="hidden" id="selected-file-path" asp-for="@Model.SelectFileId" />
         <button onclick="editFileName()" id="show-input-button" type="button"><i class="fa fa-pencil"></i></button>
         <button id="edit-name-button" asp-action="EditFileName" type="submit"><i class="fa fa-check"></i></button>
+        <button id="edit-name-button" asp-action="EditFileName" type="submit"><i class="fa fa-check"></i></button>
+        <button id="enlarge-button" onclick="enlargeImage()" type="button"><i class="fa fa-search-plus"></i></button>
         <button asp-action="DeleteFile" type="submit"><i class="fa fa-trash-o"></i></button>
     </div>
 </form>
+
+<div id="black-hover"></div>
 
 @section scripts {
     <script src="~/js/storage.js" asp-append-version="true"></script>
