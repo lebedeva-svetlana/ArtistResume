@@ -18,7 +18,7 @@ namespace Resume.Controllers
         {
             PortfolioViewModel viewModel = new()
             {
-                Works = await _context.Works.ToListAsync()
+                Works = await _context.Works.Include(e => e.StorageFile).ToListAsync()
             };
 
             return View(viewModel);
@@ -28,7 +28,7 @@ namespace Resume.Controllers
         {
             WorkViewModel viewModel = new()
             {
-                Work = await _context.Works.FirstAsync(e => e.Id == id)
+                Work = await _context.Works.Where(e => e.Id == id).Include(e => e.StorageFile).FirstAsync()
             };
 
             return View(viewModel);

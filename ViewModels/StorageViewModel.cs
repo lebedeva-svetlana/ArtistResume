@@ -1,4 +1,6 @@
 ﻿using Resume.Models;
+using System.ComponentModel.DataAnnotations;
+
 namespace Resume.ViewModels
 {
     public class StorageViewModel : BaseViewModel
@@ -7,6 +9,8 @@ namespace Resume.ViewModels
 
         public IFormFile NewFile { get; set; }
 
-        public string SelectFileName { get; set; }
+        public int SelectFileId { get; set; }
+
+        public string NewFileName { get; set; }
     }
 }

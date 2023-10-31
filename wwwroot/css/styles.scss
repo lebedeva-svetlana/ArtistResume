@@ -215,7 +215,7 @@
 .storage {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
+    grid-template-rows: repeat(auto-fit, $storage-min-w);
     grid-gap: $max-o;
 
     .storage-file {
@@ -224,6 +224,7 @@
         align-items: center;
         justify-content: flex-end;
         overflow: hidden;
+        max-height: 100%;
     }
 
     .storage-image {
@@ -239,15 +240,11 @@
         text-align: center;
         width: $storage-edit-file-name-w;
     }
+}
 
-    .storage-edit-file-name {
-        margin: $min-o 0 0 0;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        white-space: pre-wrap;
-        width: $storage-edit-file-name-w;
-        word-break: break-word;
-    }
+#edit-file-name-input {
+    margin: $min-o 0 0 0;
+    display: none;
 }
 
 #storage-file-toolbar {
@@ -259,6 +256,10 @@
     button {
         @extend %icon-button;
         @include square-size($file-toolbar-icon-fs);
+    }
+
+    #edit-name-button {
+        display: none;
     }
 }
 /*------------------ TOP BAR --------------------*/

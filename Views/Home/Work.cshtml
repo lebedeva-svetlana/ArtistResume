@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = @Model.Work.Name;
-    string src = $"/images/{@Model.Work.Path}";
+    string src = $"/images/{Model.Work.StorageFile.Id}.{Model.Work.StorageFile.Extension}";
 }
 
 <div class="detail-work-container">

@@ -9,6 +9,8 @@ namespace Resume.Controllers
     [Authorize]
     public class AccountController : BaseLanguageController
     {
+        private IWebHostEnvironment _environment;
+
         public AccountController(DatabaseContext context) : base(context)
         {
         }
@@ -87,7 +89,7 @@ namespace Resume.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteFile(StorageViewModel viewModel)
         {
-            StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Name == viewModel.SelectFileName);
+            StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Id == viewModel.SelectFileId);
             _context.Remove(file);
             _context.SaveChanges();
 
@@ -98,9 +100,14 @@ namespace Resume.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditFileName(StorageViewModel viewModel)
         {
-            //StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Path == viewModel.SelectFilePath);
-            //_context.Remove(file);
-            //_context.SaveChanges();
+            if (viewModel.SelectFileId == 0 || string.IsNullOrEmpty(viewModel.NewFileName))
+            {
+                return RedirectToAction(nameof(Storage), "Account");
+            }
+
+            StorageFile file = await _context.StorageFiles.FirstAsync(e => e.Id == viewModel.SelectFileId);
+            file.Name = viewModel.NewFileName;
+            _context.SaveChanges();
 
             return RedirectToAction(nameof(Storage), "Account");
         }

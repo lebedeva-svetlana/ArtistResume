@@ -575,7 +575,7 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
 .storage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, 200px);
   grid-gap: 20px;
 }
 .storage .storage-file {
@@ -584,6 +584,7 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
+  max-height: 100%;
 }
 .storage .storage-image {
   object-fit: contain;
@@ -597,13 +598,10 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
   text-align: center;
   width: 70%;
 }
-.storage .storage-edit-file-name {
+
+#edit-file-name-input {
   margin: 5px 0 0 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  white-space: pre-wrap;
-  width: 70%;
-  word-break: break-word;
+  display: none;
 }
 
 #storage-file-toolbar {
@@ -615,6 +613,9 @@ h1, h2, h3, h4, h5, h6, header, .logout-button, .login-container .login-button, 
 #storage-file-toolbar button {
   width: 1.2em;
   height: 1.2em;
+}
+#storage-file-toolbar #edit-name-button {
+  display: none;
 }
 
 /*------------------ TOP BAR --------------------*/
