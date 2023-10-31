@@ -236,6 +236,7 @@
     .storage-file-name {
         margin: $min-o + 1 0 0 0;
         max-height: $text-tl + 0em;
+        overflow: hidden;
         padding: 0 $min-o 0 $min-o;
         text-align: center;
         width: $storage-edit-file-name-w;
