@@ -4,9 +4,9 @@ Website template for artist resume. Work in progress.
 
 ## Screenshots
 
-![Portfolio page](https://github.com/lebedeva-svetlana/ArtistResume/assets/91262515/13955b8a-8cb1-401d-814d-870b8aecbf6d)
+![Portfolio](https://github.com/lebedeva-svetlana/ArtistResume/assets/91262515/64b320ef-bea7-479e-a3a7-28b17290204a)
 
-![Editing biography page](https://github.com/lebedeva-svetlana/ArtistResume/assets/91262515/358b5e85-6261-478f-bb6a-697371bb26ad)
+![EditBiography](https://github.com/lebedeva-svetlana/ArtistResume/assets/91262515/e9753116-a321-46c8-97b8-9bd3141805f0)
 
 ## Credits
 
