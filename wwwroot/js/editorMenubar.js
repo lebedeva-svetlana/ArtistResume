@@ -13,14 +13,6 @@ function getSlicesForStyle(editorTextarea) {
     let selection = editorTextarea.value.slice(startIndex, endIndex);
     let end = editorTextarea.value.slice(endIndex, editorTextarea.value.length);
 
-    /*  let foo = selection.includes('\r\n')*/
-    //let begin = editorTextarea.value.slice(0, startIndex);
-    //let selection = editorTextarea.value.slice(startIndex, endIndex);
-    //let end = editorTextarea.value.slice(endIndex, editorTextarea.value.length);
-
-    // Bonus: place cursor behind replacement
-    /*    textarea.selectionEnd = (first + editorTextarea.innerText).length;*/
-
     return [begin, selection, end];
 }
 
