@@ -120,4 +120,7 @@
   <data name="EditContact" xml:space="preserve">
     <value>Редактировать контакты</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
 </root>
