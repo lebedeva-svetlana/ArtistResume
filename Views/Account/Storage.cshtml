@@ -9,8 +9,12 @@
 
 <form method="post" enctype="multipart/form-data">
     <div class="upload-storage-file-container">
-        <input asp-for="@Model.NewFile" class="upload-storage-file-input" type="file" /><br>
-        <button class="upload-storage-file-button" type="submit" asp-action="UploadFile"><i class="fa fa-plus"></i></button>
+        <label class="input-file">
+            <input onchange="changeFileInputText(event)" asp-for="@Model.NewFile" type="file" accept="image/*">
+            <span class="input-file-button">Выберите файл</span>
+            <span class="input-file-text"></span>
+        </label>
+        <button class="upload-storage-file-button" disabled="disabled" type="submit" asp-action="UploadFile"><i class="fa fa-plus"></i></button>
     </div>
 </form>
 <form method="post" id="storage-form" onmouseout="unhoverFiles(event)" onmouseover="hoverFiles(event)">

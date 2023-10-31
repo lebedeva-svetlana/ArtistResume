@@ -33,7 +33,7 @@ input, textarea {
 }
 
 /*------------------ CURSOR --------------------*/
-button, .dropdown-title, .dropdown-choice, .login-link, .storage-file {
+button:enabled, .dropdown-title, .dropdown-choice, .login-link, .storage-file, .input-file-button {
     &:hover {
         cursor: pointer;
     }
@@ -41,7 +41,7 @@ button, .dropdown-title, .dropdown-choice, .login-link, .storage-file {
 
 /*------------------ BORDER CORNER --------------------*/
 
-input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name {
+input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name, .input-file-button {
     border-radius: $border-radius;
 }
 
@@ -73,11 +73,10 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
     }
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:hover, %icon-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:enabled:hover, %icon-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i, .input-file:hover {
     transition: all .3s;
     opacity: 0.6;
 }
-
 /*------------------ COLOR --------------------*/
 html, a, %button-base, .login-container {
     color: $font-c;
@@ -87,7 +86,7 @@ html, a, %button-base, .login-container {
     background-color: white;
 }
 
-header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar/*, .storage-file*/ {
+header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar, .input-file-button {
     background-color: $background-c;
 }
 
@@ -109,6 +108,10 @@ input, textarea, .storage-edit-file-name {
     &.input-validation-error, &.input-validation-error:focus {
         border: 1px solid $red-c;
     }
+}
+
+.upload-storage-file-button:disabled {
+    background-color: $disable-c;
 }
 
 /*------------------ FONT --------------------*/
@@ -159,4 +162,8 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
 
 .login-container .field-validation-error {
     @include font-size($input-error-fs, $input-error-fs);
+}
+
+.input-file {
+    @include font-size($file-input-fs, $file-input-fs);
 }

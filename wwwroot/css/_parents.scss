@@ -4,7 +4,7 @@
 %button-base {
     border: none;
     width: min-content;
-/*    background: none;*/
+    /*    background: none;*/
 }
 
 %blue-button {
@@ -65,5 +65,42 @@
 
     .dropdown-choice {
         margin: $mid-o $min-o $mid-o $min-o;
+    }
+}
+
+.input-file {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .input-file-button {
+        border: none;
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0;
+        outline: none;
+        padding: $input-file-p;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .input-file-text {
+        display: inline-block;
+        padding: 0 0 0 $min-mid-o;
+    }
+
+    & input[type=file] {
+        display: block;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        width: 0;
+        z-index: -1;
+    }
+
+    & input[type=file]:focus + .input-file-button {
+        outline: 2px solid black;
     }
 }

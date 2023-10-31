@@ -110,3 +110,10 @@ function closeEnlargeImage() {
 
     document.querySelector('#black-hover').removeEventListener('click', closeEnlargeImage);
 }
+
+function changeFileInputText(event) {
+    let input = event.currentTarget;
+    let file = input.files[0];
+    input.closest('.input-file').querySelector('.input-file-text').innerHTML = file.name;
+    input.closest('.upload-storage-file-container').querySelector('.upload-storage-file-button').removeAttribute('disabled');
+}
