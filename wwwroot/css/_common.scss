@@ -42,12 +42,12 @@ button:enabled, .dropdown-title, .dropdown-choice, .login-link, .storage-file, .
 
 /*------------------ BORDER CORNER --------------------*/
 
-input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name, .input-file-button {
+input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name, .input-file-button, .add-work-link {
     border-radius: $border-radius;
 }
 
 /*------------------ TEXT --------------------*/
-header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title {
+header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title, .add-work-link, .input-file {
     text-transform: uppercase;
 }
 
@@ -87,7 +87,7 @@ html, a, %button-base, .login-container, .edit-work-label {
     background-color: white;
 }
 
-header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar, .input-file-button {
+header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar, .input-file-button, .add-work-button, .add-work-link {
     background-color: $background-c;
 }
 
@@ -116,7 +116,7 @@ input, textarea, .storage-edit-file-name {
 }
 
 /*------------------ FONT --------------------*/
-h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title, .edit-work-label {
+h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title, .edit-work-label, .add-work-link, .input-file {
     font-family: $title-f;
 }
 
@@ -171,4 +171,8 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
 
 .edit-work-label {
     @include font-size($edit-work-label-fs, $edit-work-label-fs);
+}
+
+.add-work-link {
+    @include font-size($add-work-fs, $add-work-fs);
 }

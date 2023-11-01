@@ -6,6 +6,9 @@
 }
 
 <div class="edit-portfolio-container">
+    <div class="edit-portfolio-toolbar">
+        <a asp-action="AddWork" class="add-work-link">@Localizer["AddWork"]</a>
+    </div>
     @for (int i = 0; i < Model.Works.Count(); ++i)
     {
         string name = $"{Model.Works[i].StorageFile.Id}.{Model.Works[i].StorageFile.Extension}";

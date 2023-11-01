@@ -422,6 +422,17 @@
     }
 }
 
+.edit-portfolio-toolbar {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 $max-o + $min-mid-o 0;
+
+    .add-work-link {
+        text-decoration: none;
+        padding: $input-file-p;
+    }
+}
+
 /*------------------ TOP BAR --------------------*/
 .top-bar {
     display: flex;
