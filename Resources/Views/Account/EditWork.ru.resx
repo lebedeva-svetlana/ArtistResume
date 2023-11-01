@@ -120,6 +120,9 @@
   <data name="Comment" xml:space="preserve">
     <value>Примечание</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить работу</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Описание</value>
   </data>

@@ -55,7 +55,17 @@ namespace Resume.Controllers
             await _context.SaveChangesAsync();
 
             return View(viewModel);
-            //return RedirectToAction(nameof(EditWork), "Account", new { id = work.Id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteWork(int id)
+        {
+            Work work = await _context.Works.Where(e => e.Id == id).FirstAsync();
+            _context.Remove(work);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Portfolio), "Account");
         }
 
         [HttpGet]

@@ -5,17 +5,18 @@
     ViewData["Title"] = Model.Name;
     string src = $"/images/{Model.ImageSrc}";
 }
-
-<div class="edit-work-container">
-    <div class="edit-work-image-container">
-        <img src="@src" class="edit-work-image">
-    </div>
-    <div>
-        <form method="post">
+<form method="post">
+    <div class="edit-work-container">
+        <div class="edit-work-image-container">
+            <img src="@src" class="edit-work-image">
+            <button type="submit" asp-action="DeleteWork" class="delete-work-button">@Localizer["Delete"]</button>
+            <input type="hidden" asp-for="@Model.Id">
+        </div>
+        <div>
             <div class="edit-work-input-group">
                 <div class="edit-work-input">
                     <label class="edit-work-label" asp-for="@Model.Name">@Localizer["Title"]</label>
-                    <input asp-for="@Model.Name"/>
+                    <input asp-for="@Model.Name" />
                 </div>
                 <div class="edit-work-input">
                     <label class="edit-work-label" asp-for="@Model.Description">@Localizer["Description"]</label>
@@ -27,7 +28,7 @@
                 </div>
                 <button type="submit" asp-action="EditWork" class="edit-work-button">@Localizer["Save"]</button>
             </div>
-            <input hidden asp-for="@Model.ImageSrc"/>
-        </form>
+            <input hidden asp-for="@Model.ImageSrc" />
+        </div>
     </div>
-</div>
+</form>

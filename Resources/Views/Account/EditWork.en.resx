@@ -120,6 +120,9 @@
   <data name="Comment" xml:space="preserve">
     <value>Comment</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete work</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
