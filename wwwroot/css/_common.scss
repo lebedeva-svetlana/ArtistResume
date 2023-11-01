@@ -25,15 +25,16 @@ body {
 
 input, textarea {
     padding: $input-p;
+    resize: vertical;
 }
 
 /*------------------ BOX SHADOW --------------------*/
-#storage-file-toolbar, .storage-image {
+#storage-file-toolbar, .storage-image, .edit-portfolio-image, .work-image, .edit-work-image {
     box-shadow: $storage-toolbar-bs;
 }
 
 /*------------------ CURSOR --------------------*/
-button:enabled, .dropdown-title, .dropdown-choice, .login-link, .storage-file, .input-file-button {
+button:enabled, .dropdown-title, .dropdown-choice, .login-link, .storage-file, .input-file-button, .edit-work-input label {
     &:hover {
         cursor: pointer;
     }
@@ -46,7 +47,7 @@ input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-f
 }
 
 /*------------------ TEXT --------------------*/
-header, %button-base, .dropdown, .work-title, .login-link {
+header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title {
     text-transform: uppercase;
 }
 
@@ -73,12 +74,12 @@ header a, .profile-dropdown-container a, .social-list a, .work-link, .login-link
     }
 }
 
-a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, %blue-button:enabled:hover, %icon-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i, .input-file:hover {
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .work-comment, .edit-portfolio-comment, %blue-button:enabled:hover, %icon-button:hover, %icon-button:hover .login-link:hover, #storage-file-toolbar button:hover i, .input-file:hover {
     transition: all .3s;
     opacity: 0.6;
 }
 /*------------------ COLOR --------------------*/
-html, a, %button-base, .login-container {
+html, a, %button-base, .login-container, .edit-work-label {
     color: $font-c;
 }
 
@@ -115,7 +116,7 @@ input, textarea, .storage-edit-file-name {
 }
 
 /*------------------ FONT --------------------*/
-h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-link {
+h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-link, .edit-portfolio-title, .edit-work-label {
     font-family: $title-f;
 }
 
@@ -140,7 +141,7 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
     @include font-size($file-toolbar-icon-fs, $file-toolbar-icon-fs);
 }
 
-.work-description, .work-comment, .contacts-container p, .biography-container, .storage-file-name {
+.work-description, .work-comment, .contacts-container p, .biography-container, .storage-file-name, .edit-portfolio-text, textarea {
     @include font-size($text-fs, $text-tl);
 }
 
@@ -166,4 +167,8 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
 
 .input-file {
     @include font-size($file-input-fs, $file-input-fs);
+}
+
+.edit-work-label {
+    @include font-size($edit-work-label-fs, $edit-work-label-fs);
 }

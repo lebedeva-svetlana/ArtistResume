@@ -319,6 +319,104 @@
     }
 }
 
+.edit-portfolio-container {
+    display: flex;
+    flex-direction: column;
+
+    .edit-portfolio-work {
+        display: grid;
+        grid-template-columns: $edit-portfolio-col-w 1fr;
+        align-items: center;
+        margin: 0 0 $content-o 0;
+    }
+
+    .edit-portfolio-image-container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        max-width: $edit-portfolio-image-w;
+        max-height: $edit-portfolio-image-w;
+        grid-gap: $max-o;
+    }
+
+    .edit-portfolio-image {
+        object-fit: contain;
+        max-width: inherit;
+        max-height: inherit;
+    }
+
+    .edit-portfolio-text {
+        display: grid;
+    }
+
+    .edit-portfolio-title {
+        font-weight: 400;
+        margin: 0 0 $mid-o 0;
+        height: 1.5em;
+    }
+
+    .edit-portfolio-description {
+        margin: 0;
+        text-align: justify;
+        max-height: 7.5em;
+    }
+
+    .edit-portfolio-comment {
+        font-style: italic;
+        height: 1.6em;
+    }
+
+    .edit-portfolio-comment {
+        margin: $max-o 0 0 0;
+    }
+
+    .edit-portfolio-comment, .edit-portfolio-description, .edit-portfolio-title {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.edit-work-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    grid-gap: $content-o;
+    overflow: hidden;
+
+    .edit-work-image-container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .edit-work-image {
+        max-height: 100%;
+        max-width: 90%;
+    }
+
+    .edit-work-label {
+        margin: 0 0 $min-mid-o 0;
+    }
+
+    .edit-work-input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-work-input {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 $mid-o 0;
+    }
+
+    .edit-work-button {
+        @extend %blue-text-button;
+        margin: $min-mid-o 0 0 0;
+        align-self: center;
+    }
+}
+
 /*------------------ TOP BAR --------------------*/
 .top-bar {
     display: flex;

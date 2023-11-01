@@ -1,9 +1,33 @@
 ﻿@inject IViewLocalizer Localizer
-
 @model PortfolioViewModel
 
 @{
     ViewData["Title"] = Localizer["EditProfile"];
 }
 
-<h1>Редактировать портфолио</h1>
+<div class="edit-portfolio-container">
+    @for (int i = 0; i < Model.Works.Count(); ++i)
+    {
+        string name = $"{Model.Works[i].StorageFile.Id}.{Model.Works[i].StorageFile.Extension}";
+        string src = $"/images/{name}";
+
+        <a asp-action="EditWork" class="work-link" asp-route-id="@Model.Works[i].Id">
+            <div class="edit-portfolio-work">
+                <div class="edit-portfolio-image-container">
+                    <img src="@src" class="edit-portfolio-image">
+                </div>
+                <div class="edit-portfolio-text">
+                    <h2 class="edit-portfolio-title">
+                        <span>@Model.Works[i].Name</span>
+                    </h2>
+                    <p class="edit-portfolio-description">
+                        <span>@Model.Works[i].Description</span>
+                    </p>
+                    <p class="edit-portfolio-comment">
+                        <span>@Model.Works[i].Comment</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    }
+</div>

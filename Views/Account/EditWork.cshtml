@@ -1,0 +1,33 @@
+﻿@inject IViewLocalizer Localizer
+@model EditWorkViewModel
+
+@{
+    ViewData["Title"] = Model.Name;
+    string src = $"/images/{Model.ImageSrc}";
+}
+
+<div class="edit-work-container">
+    <div class="edit-work-image-container">
+        <img src="@src" class="edit-work-image">
+    </div>
+    <div>
+        <form method="post">
+            <div class="edit-work-input-group">
+                <div class="edit-work-input">
+                    <label class="edit-work-label" asp-for="@Model.Name">@Localizer["Title"]</label>
+                    <input asp-for="@Model.Name"/>
+                </div>
+                <div class="edit-work-input">
+                    <label class="edit-work-label" asp-for="@Model.Description">@Localizer["Description"]</label>
+                    <textarea rows="7" asp-for="@Model.Description"></textarea>
+                </div>
+                <div class="edit-work-input">
+                    <label class="edit-work-label" asp-for="@Model.Comment">@Localizer["Comment"]</label>
+                    <input asp-for="@Model.Comment" />
+                </div>
+                <button type="submit" asp-action="EditWork" class="edit-work-button">@Localizer["Save"]</button>
+            </div>
+            <input hidden asp-for="@Model.ImageSrc"/>
+        </form>
+    </div>
+</div>

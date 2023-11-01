@@ -21,10 +21,41 @@ namespace Resume.Controllers
         {
             PortfolioViewModel viewModel = new()
             {
-                Works = await _context.Works.ToListAsync()
+                Works = await _context.Works.Include(e => e.StorageFile).ToListAsync()
             };
 
             return View(viewModel);
+        }
+
+        public async Task<IActionResult> EditWork(int id)
+        {
+            Work work = await _context.Works.Where(e => e.Id == id).Include(e => e.StorageFile).FirstAsync();
+            EditWorkViewModel viewModel = new()
+            {
+                Id = id,
+                Name = work.Name,
+                Description = work.Description,
+                Comment = work.Comment,
+                ImageSrc = $"{id}.{work.StorageFile.Extension}" 
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditWork(EditWorkViewModel viewModel)
+        {
+            Work work = await _context.Works.Where(e => e.Id == viewModel.Id).FirstAsync();
+
+            work.Name = viewModel.Name;
+            work.Description = viewModel.Description;
+            work.Comment = viewModel.Comment;
+
+            await _context.SaveChangesAsync();
+
+            return View(viewModel);
+            //return RedirectToAction(nameof(EditWork), "Account", new { id = work.Id });
         }
 
         [HttpGet]
@@ -100,6 +131,8 @@ namespace Resume.Controllers
 
             return RedirectToAction(nameof(Storage), "Account");
         }
+
+        //#error при наведении во время редактирования изменяется селектед, можно поменять имя другой картинки
 
         [HttpPost]
         [ValidateAntiForgeryToken]
