@@ -1,26 +1,38 @@
 ﻿@inject IViewLocalizer Localizer
-@model ContactViewModel
+@model EditContactViewModel
 
 @{
     ViewData["Title"] = Localizer["EditContact"];
 }
+<form method="post" asp-action="Contact">
+    <div class="edit-contacts-container">
+        <div class="contact-input-container">
+            <div class="contact-input-group">
+                <div class="contact-input">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <input asp-for="@Model.Contact.Name">
+                </div>
+                <div class="contact-input">
+                    <span class="fa fa-phone" aria-hidden="true"></span>
+                    <input asp-for="@Model.Contact.TelephoneNumber">
+                </div>
+                <div class="contact-input">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+                    <input asp-for="@Model.Contact.Email">
+                </div>
+            </div>
 
-<div class="contact-input-container">
-    <form method="post">
-        <div class="contact-input-group">
-            <div class="contact-input">
-                <span class="fa fa-user" aria-hidden="true"></span>
-                <input asp-for="@Model.Contact.Name">
+            <div class="contact-input-group">
+                @for (int i = 0; i < Model.Socials.Count; ++i)
+                {
+                    string iconClass = @Model.Socials[i].FontClass;
+                    <div class="contact-input">
+                        <span class="@iconClass" aria-hidden="true"></span>
+                        <input asp-for="@Model.Socials[i].Url">
+                    </div>
+                }
             </div>
-            <div class="contact-input">
-                <span class="fa fa-phone" aria-hidden="true"></span>
-                <input asp-for="@Model.Contact.TelephoneNumber">
-            </div>
-            <div class="contact-input">
-                <span class="fa fa-envelope" aria-hidden="true"></span>
-                <input asp-for="@Model.Contact.Email">
-            </div>
-            <button class="contact-input-button" type="submit">@Localizer["Save"]</button>
         </div>
-    </form>
-</div>
+        <button asp-action="SaveContacts" class="contact-input-button" type="submit">@Localizer["Save"]</button>
+    </div>
+</form>

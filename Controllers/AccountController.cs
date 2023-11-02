@@ -36,7 +36,7 @@ namespace Resume.Controllers
                 Name = work.Name,
                 Description = work.Description,
                 Comment = work.Comment,
-                ImageSrc = $"{id}.{work.StorageFile.Extension}" 
+                ImageSrc = $"{id}.{work.StorageFile.Extension}"
             };
 
             return View(viewModel);
@@ -93,9 +93,10 @@ namespace Resume.Controllers
         [HttpGet]
         public async Task<IActionResult> Contact()
         {
-            ContactViewModel viewModel = new()
+            EditContactViewModel viewModel = new()
             {
-                Contact = await _context.Contacts.FirstAsync()
+                Contact = await _context.Contacts.FirstAsync(),
+                Socials = await _context.Socials.ToListAsync()
             };
 
             return View(viewModel);
@@ -103,13 +104,29 @@ namespace Resume.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Contact(ContactViewModel viewModel)
+        public async Task<IActionResult> SaveContacts(EditContactViewModel viewModel)
         {
             Contact? contact = await _context.Contacts.FirstAsync();
 
-            contact.Name = viewModel.Contact.Name;
-            contact.TelephoneNumber = viewModel.Contact.TelephoneNumber;
-            contact.Email = viewModel.Contact.Email;
+            if (contact is not null)
+            {
+                contact.Name = viewModel.Contact.Name;
+                contact.TelephoneNumber = viewModel.Contact.TelephoneNumber;
+                contact.Email = viewModel.Contact.Email;
+            }
+
+            List<Social>? socials = await _context.Socials.OrderBy(e => e.Id).ToListAsync();
+
+            if (socials is not null)
+            {
+                for (int i = 0; i < viewModel.Socials.Count; ++i)
+                {
+                    if (socials[i].Url != viewModel.Socials[i].Url)
+                    {
+                        socials[i].Url = viewModel.Socials[i].Url;
+                    }
+                }
+            }
 
             await _context.SaveChangesAsync();
 

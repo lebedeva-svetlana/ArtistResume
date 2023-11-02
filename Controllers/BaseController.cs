@@ -22,8 +22,6 @@ namespace Resume.Controllers
 
             var model = (context.Controller as Controller).ViewData.Model as BaseViewModel;
 
-            //TODO: model ??= new(); При выборе языка
-
             model ??= new();
 
             model.AuthorName = await _context.Contacts.Select(e => e.Name).FirstAsync();

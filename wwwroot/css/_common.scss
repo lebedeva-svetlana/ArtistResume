@@ -29,7 +29,7 @@ input, textarea {
 }
 
 /*------------------ BOX SHADOW --------------------*/
-#storage-file-toolbar, .storage-image, .edit-portfolio-image, .work-image, .edit-work-image {
+#storage-file-toolbar, .storage-image, .edit-portfolio-image, .work-image, .edit-work-image/*, .contact-input-group */{
     box-shadow: $storage-toolbar-bs;
 }
 
@@ -42,7 +42,7 @@ button:enabled, .dropdown-title, .dropdown-choice, .login-link, .storage-file, .
 
 /*------------------ BORDER CORNER --------------------*/
 
-input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name, .input-file-button, .add-work-link {
+input, textarea, %blue-button, .dropdown-menu, #storage-file-toolbar, #storage-file-toolbar button, .storage-edit-file-name, .input-file-button, .add-work-link, .contact-input-group {
     border-radius: $border-radius;
 }
 
@@ -87,7 +87,7 @@ html, a, %button-base, .login-container, .edit-work-label {
     background-color: white;
 }
 
-header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar, .input-file-button, .add-work-button, .add-work-link {
+header, %blue-button, #storage-file-toolbar button, #storage-file-toolbar, .input-file-button, .add-work-button, .add-work-link, .edit-contacts-container {
     background-color: $background-c;
 }
 
@@ -173,6 +173,6 @@ h1, h2, h3, h4, h5, h6, header, %button-base, .dropdown, .work-title, .login-lin
     @include font-size($edit-work-label-fs, $edit-work-label-fs);
 }
 
-.add-work-link {
+.add-work-link, .contact-input-button {
     @include font-size($add-work-fs, $add-work-fs);
 }

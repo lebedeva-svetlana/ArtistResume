@@ -11,8 +11,6 @@ namespace Resume.Models
                 .HasKey(e => e.Id)
                 .HasName("PK_Social");
 
-            builder.Property(e => e.Url)
-                .IsRequired();
             builder.Property(e => e.FontClass)
                 .IsRequired();
 
@@ -21,14 +19,39 @@ namespace Resume.Models
                 new Social
                 {
                     Id = 1,
+                    FontClass = $"fa fa-flickr"
+                },
+                new Social
+                {
+                    Id = 2,
+                    FontClass = $"fa fa-behance"
+                },
+                new Social
+                {
+                    Id = 3,
+                    FontClass = $"fa fa-vk"
+                },
+                new Social
+                {
+                    Id = 4,
+                    Url = "https://www.youtube.com/watch?v=L9m0C8bppZM",
+                    FontClass = $"fa fa-youtube-play"
+                },
+                new Social
+                {
+                    Id = 5,
                     Url = $"https://www.tretyakovgallery.ru/for-visitors/museums/dom-muzey-v-vasnetsova/",
                     FontClass = $"fa fa-university"
                 },
                 new Social
                 {
-                    Id = 2,
-                    Url = $"https://w.wiki/7ZST",
-                    FontClass = $"fa fa-wikipedia-w"
+                    Id = 6,
+                    FontClass = $"fa fa-camera-retro"
+                },
+                new Social
+                {
+                    Id = 7,
+                    FontClass = $"fa fa-paint-brush"
                 }
             };
 

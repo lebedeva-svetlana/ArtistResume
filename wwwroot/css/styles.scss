@@ -110,33 +110,48 @@
     margin: 0 0 1em 0;
 }
 
+.edit-contacts-container {
+    display: grid;
+    justify-items: center;
+    grid-column-gap: $min-mid-o;
+    grid-row-gap: $mid-o;
+    padding: $edit-contact-group-p $content-o $edit-contact-group-p $content-o;
+}
+
+.contact-input-button {
+    @extend %blue-text-button;
+    padding: $input-file-p;
+}
+
 .contact-input-container {
     width: min-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $content-o;
+    justify-items: center;
+    width: 100%;
 
     input {
-        min-width: $contact-input-min-w;
+        width: 100%;
     }
 
     span {
         @include grid-center;
         @include square-size($contact-icon-fs);
-        margin: 0 $min-o 0 0;
+        margin: 0 $min-mid-o 0 0;
     }
 
     .contact-input-group {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .contact-input {
         display: flex;
         align-items: center;
-        margin: 0 0 $mid-o 0;
-    }
-
-    .contact-input-button {
-        @extend %blue-text-button;
-        align-self: center;
+        margin: $min-mid-o auto $min-mid-o auto;
+        width: 100%;
     }
 }
 
