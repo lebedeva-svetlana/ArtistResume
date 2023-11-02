@@ -159,8 +159,6 @@ namespace Resume.Controllers
             return RedirectToAction(nameof(Storage), "Account");
         }
 
-        //#error при наведении во время редактирования изменяется селектед, можно поменять имя другой картинки
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UploadFile(StorageViewModel viewModel)

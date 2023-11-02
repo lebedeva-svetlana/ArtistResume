@@ -27,12 +27,6 @@ builder.Services.Configure<RouteOptions>(options =>
 
 builder.Services.AddResponseCaching();
 
-//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
-//{
-//    options.LoginPath = new PathString("/Authorization/Login");
-//    options.AccessDeniedPath = new PathString("/Home/Portfolio");
-//});
-
 builder.Services.AddAuthentication("Identity.Application").AddCookie(options =>
 {
     options.LoginPath = new PathString("/Authorization/Login");
@@ -83,7 +77,6 @@ using (var scope = serviceScopeFactory.CreateScope())
 
 if (!app.Environment.IsDevelopment())
 {
-    //app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 

@@ -9,7 +9,6 @@ namespace Resume.Models
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
-            // TODO: Database.EnsureCreated()
             //Database.EnsureDeleted();
             //Database.EnsureCreated();
         }
