@@ -4,51 +4,42 @@
 @{
     ViewData["Title"] = Localizer["EditBiography"];
 }
+
 <form asp-action="SaveBiography" method="post">
     <div class="editor-container">
-
         <div class="editor-menubar">
             <div class="rightline-menubar">
                 <button type="submit"><i class="fa fa-floppy-o"></i></button>
             </div>
             <div class="rightline-menubar">
-                <button onclick="setItalic()" type="button"><i class="fa fa-italic"></i></button>
-                <button onclick="setBold()" type="button"><i class="fa fa-bold"></i></button>
-                <button onclick="setStrikethrough()" type="button"><i class="fa fa-strikethrough"></i></button>
-                <button onclick="setUnderline()" type="button"><i class="fa fa-underline"></i></button>
+                <button type="button"><i class="fa fa-italic set-italic-js"></i></button>
+                <button type="button"><i class="fa fa-bold set-bold-js"></i></button>
+                <button type="button"><i class="fa fa-strikethrough set-strikethrough-js"></i></button>
+                <button type="button"><i class="fa fa-underline set-underline-js"></i></button>
             </div>
             <div class="rightline-menubar">
-                <button onclick="alignCenter()" type="button"><i class="fa fa-align-center"></i></button>
-                <button onclick="alignLeft()" type="button"><i class="fa fa-align-left"></i></button>
-                <button onclick="alignRight()" type="button"><i class="fa fa-align-right"></i></button>
-                <button onclick="alignJustify()" type="button"><i class="fa fa-align-justify"></i></button>
+                <button type="button"><i class="fa fa-align-center align-center-js"></i></button>
+                <button type="button"><i class="fa fa-align-left align-left-js"></i></button>
+                <button type="button"><i class="fa fa-align-right align-right-js"></i></button>
+                <button type="button"><i class="fa fa-align-justify align-justify-js"></i></button>
             </div>
             <div class="rightline-menubar h-icon">
-                <button onclick="setH2()" type="button">H1</button>
-                <button onclick="setH3()" type="button">H2</button>
-                <button onclick="setH4()" type="button">H3</button>
-                @*<button onclick="setUl()"><i class="fa fa-list-ul"></i></button>
-                <button onclick="setOl()"><i class="fa fa-list-ol"></i></button>*@
+                <button type="button" class="set-h2-js">H1</button>
+                <button type="button" class="set-h3-js">H2</button>
+                <button type="button" class="set-h3-js">H3</button>
             </div>
             <div class="rightline-menubar h-icon">
-                <button onclick="addQuote()" type="button"><i class="fa fa-quote-right"></i></button>
+                <button type="button" class="add-quote-js"><i class="fa fa-quote-right"></i></button>
             </div>
             <div class="menubar-group">
-                <button onclick="addLink()" type="button"><i class="fa fa-link"></i></button>
-                @*                <button type="button"><i class="fa fa-file-image-o"></i></button>*@
+                <button type="button" class="add-link-js"><i class="fa fa-link"></i></button>
             </div>
         </div>
-        <textarea class="editor-textarea" rows="20" asp-for="@Model.Markdown"></textarea>
+        <textarea asp-for="@Model.Markdown" rows="20" class="editor-textarea"></textarea>
     </div>
 </form>
 
-@*<form enctype="multipart/form-data" method="post">
-    <input asp-for="@Model.NewFile" type="file">
-    <span asp-validation-for="@Model.NewFile"></span>
-    <input asp-page-handler="Upload" type="submit" value="Upload" />
-</form>*@
-
 @section scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
     <script src="~/js/editorMenubar.js" asp-append-version="true"></script>
 }
-

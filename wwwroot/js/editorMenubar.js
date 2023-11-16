@@ -1,8 +1,21 @@
-﻿'use strict';
+﻿$(document).ready(function () {
+    $(".set-italic-js").click(setItalic);
+    $(".set-bold-js").click(setBold);
+    $(".set-strikethrough-js").click(setStrikethrough);
+    $(".set-underline-js").click(setUnderline);
+    $(".align-center-js").click(alignCenter);
+    $(".align-left-js").click(alignLeft);
+    $(".align-right-js").click(alignRight);
+    $(".align-justify-js").click(alignJustify);
+    $(".set-h2-js").click(setH2);
+    $(".set-h3-js").click(setH3);
+    $(".set-h4-js").click(setH4);
+    $(".add-quote-js").click(addQuote);
+    $(".add-link-js").click(addLink);
+});
 
 function hasSelection(editorTextarea) {
-    let has = !(editorTextarea.selectionEnd == 0 && editorTextarea.selectionStart == 0);
-    return has;
+    return !(editorTextarea.selectionEnd == 0 && editorTextarea.selectionStart == 0);
 }
 
 function getSlicesForStyle(editorTextarea) {
@@ -17,15 +30,15 @@ function getSlicesForStyle(editorTextarea) {
 }
 
 function setStyle(startChar, endChar) {
-    let editorTextarea = document.querySelector(".editor-textarea");
+    let $editorTextarea = $(".editor-textarea")[0];
 
-    if (!hasSelection(editorTextarea)) {
+    if (!hasSelection($editorTextarea)) {
         return;
     }
 
-    let slices = getSlicesForStyle(editorTextarea);
+    let slices = getSlicesForStyle($editorTextarea);
     let textForInsert = startChar + slices[1] + endChar;
-    editorTextarea.value = slices[0] + textForInsert + slices[2];
+    $editorTextarea.value = slices[0] + textForInsert + slices[2];
 }
 
 function setItalic() {
