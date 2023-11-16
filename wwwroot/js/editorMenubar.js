@@ -1,17 +1,17 @@
 ﻿$(document).ready(function () {
-    $(".set-italic-js").click(setItalic);
-    $(".set-bold-js").click(setBold);
-    $(".set-strikethrough-js").click(setStrikethrough);
-    $(".set-underline-js").click(setUnderline);
-    $(".align-center-js").click(alignCenter);
-    $(".align-left-js").click(alignLeft);
-    $(".align-right-js").click(alignRight);
-    $(".align-justify-js").click(alignJustify);
-    $(".set-h2-js").click(setH2);
-    $(".set-h3-js").click(setH3);
-    $(".set-h4-js").click(setH4);
-    $(".add-quote-js").click(addQuote);
-    $(".add-link-js").click(addLink);
+    $('.set-italic-js').click(setItalic);
+    $('.set-bold-js').click(setBold);
+    $('.set-strikethrough-js').click(setStrikethrough);
+    $('.set-underline-js').click(setUnderline);
+    $('.align-center-js').click(alignCenter);
+    $('.align-left-js').click(alignLeft);
+    $('.align-right-js').click(alignRight);
+    $('.align-justify-js').click(alignJustify);
+    $('.set-h2-js').click(setH2);
+    $('.set-h3-js').click(setH3);
+    $('.set-h4-js').click(setH4);
+    $('.add-quote-js').click(addQuote);
+    $('.add-link-js').click(addLink);
 });
 
 function hasSelection(editorTextarea) {
@@ -30,7 +30,7 @@ function getSlicesForStyle(editorTextarea) {
 }
 
 function setStyle(startChar, endChar) {
-    let $editorTextarea = $(".editor-textarea")[0];
+    let $editorTextarea = $('.editor-textarea')[0];
 
     if (!hasSelection($editorTextarea)) {
         return;
