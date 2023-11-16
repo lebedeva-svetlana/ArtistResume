@@ -82,12 +82,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//var rules = new RewriteOptions().AddRedirect(@"^.{0}$", "/Home/Portfolio");
-//var rules = new RewriteOptions()
-//    .AddRedirect(@"account[/]?$", "/account/portfolio")
-//    .AddRedirect(@"^.{0}$", "/portfolio");
-//app.UseRewriter(rules);
-
 app.UseResponseCaching();
 
 app.UseStaticFiles();
