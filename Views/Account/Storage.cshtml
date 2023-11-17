@@ -10,22 +10,22 @@
 <form method="post" enctype="multipart/form-data">
     <div class="upload-storage-file-container">
         <label class="input-file">
-            <input onchange="changeFileInputText(event)" asp-for="@Model.NewFile" type="file" accept="image/*">
+            <input asp-for="@Model.NewFile" type="file" accept="image/*" class="change-input-text-js">
             <span class="input-file-button">@Localizer["SelectFile"]</span>
             <span class="input-file-text"></span>
         </label>
-        <button class="upload-storage-file-button" disabled="disabled" type="submit" asp-action="UploadFile"><i class="fa fa-plus"></i></button>
+        <button asp-action="UploadFile" type="submit" disabled="disabled" class="upload-storage-file-button"><i class="fa fa-plus"></i></button>
     </div>
 </form>
-<form method="post" id="storage-form" onmouseout="unhoverFiles(event)" onmouseover="hoverFiles(event)">
+<form method="post" id="storage-form" class="hover-files-js">
     <div class="storage">
         @for (int i = 0; i < Model.Files.Count(); ++i)
         {
             string src = $"/images/{Model.Files[i].Id}.{Model.Files[i].Extension}";
 
-            <div class="storage-file" onmouseover="hoverFile(event)">
-                <img src="@src" onclick="enlargeImage()" class="storage-image" image-id="@Model.Files[i].Id">
-                <div class="storage-file-name" image-id="@Model.Files[i].Id" value="@Model.Files[i].Name">@Model.Files[i].Name</div>
+            <div class="storage-file hover-file-js">
+                <img src="@src" image-id="@Model.Files[i].Id" class="storage-image enlarge-image-js">
+                <div value="@Model.Files[i].Name" image-id="@Model.Files[i].Id" class="storage-file-name">@Model.Files[i].Name</div>
             </div>
         }
     </div>
@@ -33,20 +33,20 @@
     <div id="enlarge-image-container">
         <div class="enlarge-image-container-rel">
             <img id="enlarge-image">
-            <button onclick="closeEnlargeImage()" id="close-enlarge-image-button" type="button"><i class="fa fa-times"></i></button>
+            <button type="button" id="close-enlarge-image-button" class="close-enlarge-image-js"><i class="fa fa-times"></i></button>
         </div>
     </div>
     <div id="storage-file-toolbar">
-        <input type="hidden" id="selected-file-path" asp-for="@Model.SelectFileId" />
-        <button onclick="editFileName()" id="show-input-button" type="button"><i class="fa fa-pencil"></i></button>
-        <button id="edit-name-button" asp-action="EditFileName" type="submit"><i class="fa fa-check"></i></button>
-        <button id="enlarge-button" onclick="enlargeImage()" type="button"><i class="fa fa-search-plus"></i></button>
+        <input asp-for="@Model.SelectFileId" type="hidden" id="selected-file-path" />
+        <button type="button" class="edit-file-name-js" id="show-input-button"><i class="fa fa-pencil"></i></button>
+        <button asp-action="EditFileName" type="submit" id="edit-name-button"><i class="fa fa-check"></i></button>
+        <button type="button" id="enlarge-button" class="enlarge-image-js"><i class="fa fa-search-plus"></i></button>
         <button asp-action="DeleteFile" type="submit"><i class="fa fa-trash-o"></i></button>
     </div>
 </form>
-
 <div id="black-hover"></div>
 
 @section scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
     <script src="~/js/storage.js" asp-append-version="true"></script>
 }

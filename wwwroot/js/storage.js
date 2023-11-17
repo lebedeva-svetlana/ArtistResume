@@ -1,67 +1,61 @@
-﻿'use strict';
+﻿$(document).ready(function () {
+    $('.change-input-text-js').change(changeInputText);
+    $('.hover-files-js').mouseover(hoverFiles);
+    $('.hover-files-js').mouseout(unhoverFiles);
+    $('.hover-file-js').mouseover(hoverFile);
+    $('.enlarge-image-js').click(enlargeImage);
+    $('.close-enlarge-image-js').click(closeEnlargeImage);
+    $('.edit-file-name-js').click(editFileName);
+});
 
 function hoverFile(event) {
-    if (document.querySelector('#black-hover').style.display == 'block') {
+    if ($('#black-hover').is(":visible")) {
         return;
     }
+
     let file = event.currentTarget;
+    let $toolbar = $('#storage-file-toolbar')[0];
+    let $name = $(file).find('.storage-file-name')[0];
+    let $image = $(file).find('.storage-image')[0];
 
-    let margin = 6;
-    let px = 'px';
+    let top = ($($image).position().top + $($image).height()) - $($name).height() - 6;
+    let left = $(file).position().left + (($(file).innerWidth() - $($toolbar).width()) / 2);
 
-    let toolbar = document.getElementById('storage-file-toolbar');
+    $($toolbar).css('top', top);
+    $($toolbar).css('left', left);
 
-    let name = file.querySelector('.storage-file-name');
-    let image = file.querySelector('.storage-image');
-
-    let yOffset = image.getBoundingClientRect().bottom - name.getBoundingClientRect().height - margin;
-    let xOffset = (file.getBoundingClientRect().width - toolbar.getBoundingClientRect().width) / 2;
-
-    let top = yOffset + window.scrollY + px;
-    let left = xOffset + file.getBoundingClientRect().left + window.scrollX + px;
-
-
-    toolbar.style.top = top;
-    toolbar.style.left = left;
-
-    let imageId = file.querySelector('div.storage-file-name').getAttribute('image-id');
-    toolbar.querySelector('#selected-file-path').value = imageId;
+    let imageId = $($(file).find('div.storage-file-name')[0]).attr('image-id');
+    $($toolbar).find('#selected-file-path').val(imageId);
 }
 
 function unhoverFiles(event) {
-    if (document.querySelector('#black-hover').style.display == 'block') {
-        return;
+    if (!$('#black-hover').is(":visible")) {
+        $('#storage-file-toolbar').css('visibility', 'hidden');
     }
-    let toolbar = document.getElementById('storage-file-toolbar');
-    toolbar.style.visibility = 'hidden';
 }
 
 function hoverFiles(event) {
-    if (document.querySelector('#black-hover').style.display == 'block') {
-        return;
+    if (!$('#black-hover').is(":visible")) {
+        $('#storage-file-toolbar').css('visibility', 'visible');
     }
-    let toolbar = document.getElementById('storage-file-toolbar');
-    toolbar.style.visibility = 'visible';
 }
 
 function editFileName() {
-    document.querySelector('#edit-file-name-input').value = '';
-    let fileName = document.querySelector('#selected-file-path').value;
-    let name = document.querySelector(`.storage-file-name[image-id="${fileName}"]`);
+    $('#edit-file-name-input').val('');
+    let $fileName = $('#selected-file-path').val();
+    let $name = $(`.storage-file-name[image-id='${$fileName}']`);
 
-    let input = document.querySelector('#edit-file-name-input');
-    input.value = name.getAttribute('value');
-    input.style.display = 'block';
+    let $input = $('#edit-file-name-input');
+    $input.val($($name).text());
+    $input.css('display', 'block');
 
-    let container = name.parentNode;
+    $($input).insertBefore($($name));
+    $name.css('display', 'none');
 
-    container.insertBefore(input, name);
-    name.style.display = 'none';
+    $('#show-input-button').css('display', 'none');
+    $('#edit-name-button').css('display', 'grid');
 
-    document.querySelector('#show-input-button').style.display = 'none';
-    document.querySelector('#edit-name-button').style.display = 'grid';
-
-    document.body.addEventListener('keydown', checkKeys);
+    $('body').keydown(checkKeys);
 }
 
 function checkKeys(event) {
@@ -69,55 +63,53 @@ function checkKeys(event) {
         return;
     }
 
-    event.preventDefault();
+    $input.css('display', 'none');
+    $name.css('display', 'block');
 
-    let input = document.querySelector('#edit-file-name-input');
-    let name = input.parentNode.querySelector('div.storage-file-name');
+    $('#edit-name-button').css('display', 'none');
+    $('#show-input-button').css('display', 'grid');
 
-    document.querySelector('#storage-form').insertBefore(input, document.querySelector('#storage-file-toolbar'));
+    let $input = $('#edit-file-name-input');
+    let $name = $input.next();
 
-    document.removeEventListener('keydown', checkKeys);
+    $($input).insertBefore($('#storage-file-toolbar'));
 
-    document.querySelector('#show-input-button').style.display = 'grid';
-    document.querySelector('#edit-name-button').style.display = 'none';
-
-    input.style.display = 'none';
-    name.style.display = 'block';
+    document.off('keydown');
 
     if (event.key == 'Enter') {
-        document.querySelector('#edit-file-name-input').value = input.value;
-        document.querySelector('#edit-name-button').click();
+        $('#edit-file-name-input').val($input.val());
+        $('#edit-name-button').click();
     }
 }
 
 function enlargeImage() {
-    document.getElementById('storage-file-toolbar').style.visibility = 'hidden';
-    let fileName = document.querySelector('#selected-file-path').value;
-    let imageSrc = document.querySelector(`.storage-image[image-id="${fileName}"]`).getAttribute('src');
+    $('#storage-file-toolbar').css('visibility', 'hidden');
+    let $fileName = $('#selected-file-path').val();
+    let $imageSrc = $(`.storage-image[image-id='${$fileName}']`).attr('src');
 
-    let enlargeImageContainer = document.querySelector('#enlarge-image-container');
-    let enlargeImage = document.querySelector('#enlarge-image');
+    let $enlargeImageContainer = $('#enlarge-image-container');
+    let $enlargeImage = $('#enlarge-image');
 
-    enlargeImage.setAttribute('src', imageSrc);
-    enlargeImageContainer.style.display = 'block';
+    $enlargeImage.attr('src', $imageSrc);
+    $enlargeImageContainer.css('display', 'block');
 
-    let hover = document.querySelector('#black-hover');
-    hover.style.display = 'block';
+    let $hover = $('#black-hover');
+    $hover.css('display', 'block');
 
-    hover.addEventListener('click', closeEnlargeImage);
+    $hover.click(closeEnlargeImage);
 }
 
 function closeEnlargeImage() {
-    document.querySelector('#enlarge-image-container').style.display = 'none';
-    document.querySelector('#enlarge-image').setAttribute('src', '');
-    document.querySelector('#black-hover').style.display = 'none';
+    $('#enlarge-image-container').css('display', 'none');
+    $('#enlarge-image').attr('src', '');
+    $('#black-hover').css('display', 'none');
 
-    document.querySelector('#black-hover').removeEventListener('click', closeEnlargeImage);
+    $('#black-hover').off('click');
 }
 
-function changeFileInputText(event) {
+function changeInputText(event) {
     let input = event.currentTarget;
     let file = input.files[0];
-    input.closest('.input-file').querySelector('.input-file-text').innerHTML = file.name;
-    input.closest('.upload-storage-file-container').querySelector('.upload-storage-file-button').removeAttribute('disabled');
+    $('.input-file-text').text(file.name);
+    $('.upload-storage-file-button').removeAttr('disabled');
 }
