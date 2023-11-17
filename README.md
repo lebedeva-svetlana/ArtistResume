@@ -1,6 +1,6 @@
 # ArtistResume
 
-Website template for artist resume. Work in progress.
+Website template for an artist resume. Work in progress.
 
 ## Screenshots
 
