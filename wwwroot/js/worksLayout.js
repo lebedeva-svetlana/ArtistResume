@@ -2,8 +2,8 @@
 var msnry = new Masonry(works, {
     fitWidth: true,
     horizontalOrder: true,
-    itemSelector: '.work-container',
-    columnWidth: '.work-container',
+    itemSelector: '.work',
+    columnWidth: '.work',
     gutter: 30,
     stagger: 30
 });

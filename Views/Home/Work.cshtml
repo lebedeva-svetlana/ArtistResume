@@ -1,13 +1,12 @@
-﻿@*@inject IViewLocalizer Localizer*@
-@model WorkViewModel
+﻿@model WorkViewModel
 
 @{
     ViewData["Title"] = @Model.Work.Name;
     string src = $"/images/{Model.Work.StorageFile.Id}.{Model.Work.StorageFile.Extension}";
 }
 
-<div class="detail-work-container">
-    <img src="@src" class="detail-work-image">
+<div class="work-detail">
+    <img src="@src" class="work-detail-image">
     <div class="work-text">
         <h2 class="work-title">@Model.Work.Name</h2>
         <p class="work-description">@Model.Work.Description</p>

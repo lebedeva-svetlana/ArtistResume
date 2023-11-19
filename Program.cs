@@ -29,8 +29,8 @@ builder.Services.AddResponseCaching();
 
 builder.Services.AddAuthentication("Identity.Application").AddCookie(options =>
 {
-    options.LoginPath = new PathString("/Authorization/Login");
-    options.AccessDeniedPath = new PathString("/Home/Portfolio");
+    options.LoginPath = new PathString("/authorization/login");
+    options.AccessDeniedPath = new PathString("/home/portfolio");
 });
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
@@ -96,24 +96,14 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "culture",
-    pattern: "{culture=en}/{controller=Home}/{action=Index}/{id?}",
+    pattern: "{culture=en}/{controller=home}/{action=index}/{id?}",
     constraints: new
     {
         culture = new CultureConstraint(defaultCulture: "en", pattern: "[a-z]{2}")
     });
 
-//app.MapControllerRoute(
-//    name: "login",
-//    pattern: "{action=Login}",
-//    defaults: new { controller = "Authorization" });
-
-//app.MapControllerRoute(
-//    name: "root",
-//    pattern: "{action=Portfolio}/{id?}",
-//    defaults: new { controller = "Home" });
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Portfolio}/{id?}");
+    pattern: "{controller=home}/{action=portfolio}/{id?}");
 
 app.Run();

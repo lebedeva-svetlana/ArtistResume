@@ -28,11 +28,11 @@ namespace Resume
                     );
                 }
 
-                cultureCode = GetDefaultCultureCode();
+                //cultureCode = GetDefaultCultureCode();
             }
             else
             {
-                cultureCode = GetDefaultCultureCode();
+                //cultureCode = GetDefaultCultureCode();
             }
 
             ProviderCultureResult requestCulture = new(cultureCode);

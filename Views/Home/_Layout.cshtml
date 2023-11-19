@@ -1,52 +1,70 @@
 ﻿@using Resume.Views;
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @inject IViewLocalizer Localizer
-
 @model BaseViewModel
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - @Model.AuthorName</title>
-    <link rel="stylesheet" href="~/css/normalize.css" />
-    <link rel="stylesheet" href="~/fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
-    @*    <link rel="stylesheet" href="~/Resume.styles.css" asp-append-version="true" />*@
+    <link rel="stylesheet"
+          href="~/css/normalize.css" />
+    <link rel="stylesheet"
+          href="~/fonts/font-awesome/css/font-awesome.min.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/styles.css"
+          asp-append-version="true" />
 </head>
 <body>
     <header>
-        <a asp-controller="Home" asp-action="Portfolio" class="link">
-            <h1 class="author-name-title">@Model.AuthorName</h1>
+        <a asp-controller="Home"
+           asp-action="Portfolio"
+           class="link">
+            <h1 class="main-title">@Model.AuthorName</h1>
         </a>
-        <nav>
-            <div class="nav-list">
-                <div><a asp-controller="Home" asp-action="Portfolio">@SharedLocalizer["Portfolio"]</a></div>
-                <div><a asp-controller="Home" asp-action="Biography">@SharedLocalizer["Biography"]</a></div>
-                <div><a asp-controller="Home" asp-action="Contact">@SharedLocalizer["Contact"]</a></div>
+        <nav class="nav">
+            <div>
+                <a asp-controller="Home"
+                   asp-action="Portfolio">@SharedLocalizer["Portfolio"]</a>
+            </div>
+            <div>
+                <a asp-controller="Home"
+                   asp-action="Biography">@SharedLocalizer["Biography"]</a>
+            </div>
+            <div>
+                <a asp-controller="Home"
+                   asp-action="Contact">@SharedLocalizer["Contact"]</a>
             </div>
         </nav>
         @await Component.InvokeAsync("Socials")
     </header>
-    <div class="content-container">
-        <div class="top-bar">
+    <div class="content">
+        <div class="topbar">
             @await Html.PartialAsync("_SetLanguagePartial", Model.CultureViewModel)
             @if (User.Identity.IsAuthenticated)
             {
-                <div class="profile-dropdown-container">
+                <div class="profile">
                     <div class="dropdown">
                         <div class="dropdown-title">
-                            <div class="dropdown-title">@Localizer["Profile"]</div>
-                            <div class="dropdown-icon">
-                                <span class="fa fa-sort-desc" aria-hidden="true"></span>
-                            </div>
+                            <div>@Localizer["Profile"]</div>
+                            <div class="fa fa-sort-desc dropdown-icon"></div>
                         </div>
                         <div class="dropdown-menu">
-                            <div class="dropdown-choice"><a asp-controller="Account" asp-action="Portfolio">@Localizer["Edit"]</a></div>
                             <div class="dropdown-choice">
-                                <form asp-controller="Authorization" asp-action="Logout">
-                                    <button type="submit" class="logout-button">@SharedLocalizer["Logout"]</button>
+                                <a asp-controller="Account"
+                                   asp-action="Portfolio">@Localizer["Edit"]</a>
+                            </div>
+                            <div class="dropdown-choice">
+                                <form asp-controller="Authorization"
+                                      asp-action="Logout">
+                                    <button type="submit"
+                                            class="profile-logout">
+                                        @SharedLocalizer["Logout"]
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -55,7 +73,10 @@
             }
             else
             {
-                <div class="login-link"><a asp-controller="Authorization" asp-action="Login">@SharedLocalizer["Login"]</a></div>
+                <div class="profile-login">
+                    <a asp-controller="Authorization"
+                       asp-action="Login">@SharedLocalizer["Login"]</a>
+                </div>
             }
         </div>
         <main>
@@ -65,5 +86,3 @@
     @await RenderSectionAsync("scripts", required: false)
 </body>
 </html>
-
-

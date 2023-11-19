@@ -1,134 +1,314 @@
-@import "_vars.scss";
-@import "_mixins.scss";
 @import "_parents.scss";
-@import "_common.scss";
-@import "_media.scss";
+@import "_vars.scss";
 
-/*------------------ LEFT BAR --------------------*/
-.author-name-title {
-    margin: $max-o 0 $max-o 0;
+html {
+    color: $base-color;
+    font-family: $base-font;
+    font-size: 100%;
 }
 
-.nav-list {
+header {
+    background-color: $background-color;
+    font-family: $title-font;
+    padding: 0 20px 0 20px;
+    text-transform: uppercase;
+    width: min-content;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+}
+
+input, textarea {
+    border: 1px solid $base-color;
+    border-radius: $border-radius;
+    padding: 5px;
+
+    &:focus {
+        outline: 1px solid $base-color;
+    }
+
+    &.input-validation-error, &.input-validation-error:focus {
+        border: 1px solid $error-color;
+    }
+}
+
+textarea {
+    font-size: 1em;
+    line-height: 1.5em;
+    resize: vertical;
+}
+
+a {
+    color: $base-color;
+}
+
+button:enabled:hover {
+    cursor: pointer;
+}
+
+%hover-opacity:hover {
+    transition: all .3s;
+    opacity: 0.6;
+}
+
+a:hover, .dropdown-title:hover, .dropdown-menu button:hover, .dropdown-choice:hover, .portfolio-edit-comment, %blue-button:enabled:hover, %icon-button:hover, %icon-button:hover .profile-login:hover, #storage-toolbar button:hover i, .file-upload-label:hover {
+    transition: all .3s;
+    opacity: 0.6;
+}
+
+.main-title {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    margin: 20px 0 20px 0;
+}
+
+.nav {
+    font-size: 1.2em;
+    line-height: 1.2em;
     margin: 0;
     padding: 0;
 
     div {
-        margin: 0 0 $mid-o 0;
+        margin: 0 0 15px 0;
+    }
+
+    .item-underline {
+        border-bottom: 1px solid $base-color;
+        margin: 0;
+        padding: 0 0 15px 0;
+    }
+
+    .item-underline + div {
+        margin-top: 15px;
     }
 }
 
-.social-list {
-    display: grid;
+.socials {
     align-items: center;
-    grid-gap: $min-o;
-    grid-template-columns: repeat(auto-fill, $social-icon-fs + 0em);
-    margin: $mid-o 0 0 0;
+    display: grid;
+    font-size: 1.2em;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, 1.4em);
+    line-height: 1.2em;
+    margin: 15px 0 0 0;
     padding: 0;
 
     a, div {
-        @include grid-center;
+        align-content: center;
+        display: grid;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     div {
-        @include square-size($social-icon-fs);
+        height: 1.4em;
+        width: 1.4em;
     }
 }
 
-.underline-nav {
-    border-bottom: 1px solid $font-c;
-    margin: 0;
-    padding: 0 0 $mid-o 0;
+.topbar {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 20px 20px 0;
+
+    .profile-login {
+        font-family: $title-font;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        margin: 0 0 0 20px;
+        padding: 0 0 0 5px;
+        text-transform: uppercase;
+
+        a {
+            text-decoration: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
-/*------------------ MAIN CONTENT --------------------*/
-.content-container {
+.lang {
+    @extend %dropdown-container;
+
+    .dropdown-menu {
+        min-width: 55px;
+    }
+}
+
+.h-icon button {
+    font-weight: 600;
+}
+
+.profile {
+    @extend %dropdown-container;
+    margin: 0 0 0 20px;
+
+    a {
+        font-size: 1.1em;
+        line-height: 1.1em;
+        text-decoration: none;
+    }
+
+    .dropdown-menu {
+        min-width: 100px;
+    }
+}
+
+.profile-logout {
+    @extend %button-base;
+    background-color: transparent;
+    padding: 0;
+}
+
+.content {
+    margin: 20px 40px 40px 40px;
     width: 100%;
-    margin: $max-o $content-o $content-o $content-o;
 }
 
 .works {
     margin: 0 auto;
 }
 
-.work-container {
-    @include grid-center;
+.work {
+    align-content: center;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
     grid-template-rows: 1fr auto;
-    margin: 0 0 $content-o 0;
-    width: $work-masonry-w;
+    margin: 0 0 40px 0;
+    width: 250px;
 
-    .work-image {
-        object-fit: contain;
-        max-width: $work-masonry-w;
-        max-height: $work-masonry-w;
+    .work-link {
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.7;
+            color: $base-color;
+        }
     }
 
-    .detail-work-image {
-        max-width: 100%;
+    .work-image {
+        box-shadow: $shadow;
+        max-height: 250px;
+        max-width: 250px;
         object-fit: contain;
     }
 
     .work-title {
+        font-family: $title-font;
+        font-size: 1.4em;
         font-weight: 400;
-        margin: 0 0 $mid-o 0;
+        line-height: 1.4em;
+        margin: 0 0 15px 0;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .work-text, .work-comment {
-        margin: $max-o 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .work-description {
+        font-size: 1em;
+        line-height: 1.5em;
         margin: 0;
         text-align: justify;
     }
 
     .work-comment {
+        font-size: 1em;
         font-style: italic;
+        line-height: 1.5em;
     }
 }
 
-.detail-work-container {
-    @extend .work-container;
+.work-detail {
+    @extend .work;
     width: 100%;
+
+    .work-detail-image {
+        max-width: 100%;
+        object-fit: contain;
+    }
 }
 
-.contacts-container {
-    p {
-        display: flex;
+.work-link {
+    text-decoration: none;
+}
+
+.contacts {
+    .contact {
         align-items: center;
+        display: flex;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0 0 1em 0;
+        text-align: justify;
     }
 
-    span {
-        @include grid-center;
-        @include square-size($contact-icon-fs);
-        margin: 0 $min-o 0 0;
+    .contact-icon {
+        align-content: center;
+        display: grid;
+        font-size: 1.3em;
+        height: 1.3em;
+        justify-content: center;
+        line-height: 1.3em;
+        margin: 0 5px 0 0;
+        width: 1.3em;
     }
 }
 
-.contacts-container p, .biography-container p {
+.biography {
+    font-size: 1em;
+    line-height: 1.5em;
     margin: 0 0 1em 0;
+    text-align: justify;
+
+    p {
+        margin: 0 0 1em 0;
+    }
 }
 
-.edit-contacts-container {
+.contacts-edit {
+    background-color: $background-color;
     display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
     justify-items: center;
-    grid-column-gap: $min-mid-o;
-    grid-row-gap: $mid-o;
-    padding: $edit-contact-group-p $content-o $edit-contact-group-p $content-o;
+    padding: 20px 40px 20px 40px;
 }
 
 .contact-input-button {
     @extend %blue-text-button;
-    padding: $input-file-p;
+    font-size: 1.1em;
+    line-height: 1.1em;
+    padding: 10px 20px;
 }
 
 .contact-input-container {
-    width: min-content;
     display: grid;
+    font-size: 1em;
+    grid-gap: 40px;
     grid-template-columns: 1fr 1fr;
-    grid-gap: $content-o;
     justify-items: center;
+    line-height: 1em;
     width: 100%;
 
     input {
@@ -136,31 +316,42 @@
     }
 
     span {
-        @include grid-center;
-        @include square-size($contact-icon-fs);
-        margin: 0 $min-mid-o 0 0;
+        align-content: center;
+        display: grid;
+        font-size: 1.3em;
+        height: 1.3em;
+        justify-content: center;
+        line-height: 1.3em;
+        margin: 0 10px 0 0;
+        width: 1.3em;
     }
 
     .contact-input-group {
+        border-radius: $border-radius;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
     .contact-input {
-        display: flex;
         align-items: center;
-        margin: $min-mid-o auto $min-mid-o auto;
+        display: flex;
+        margin: 10px auto 10px auto;
         width: 100%;
     }
 }
 
-.login-container, .login-group {
-    @include grid-center;
+.login, .login-group {
+    align-content: center;
+    display: grid;
+    justify-content: center;
 }
 
-.login-container {
+.login {
+    color: $base-color;
+    font-size: 1.3em;
     height: 100vh;
+    line-height: 1.3em;
     width: 100vw;
 
     .login-input {
@@ -168,12 +359,12 @@
         flex-direction: column;
 
         input {
-            margin: 0 0 $min-o 0;
+            margin: 0 0 5px 0;
         }
     }
 
     .login-input, .validation-summary-errors {
-        margin: 0 0 $mid-o 0;
+        margin: 0 0 15px 0;
     }
 
     .validation-summary-errors ul {
@@ -184,42 +375,57 @@
 
     .login-button {
         @extend %blue-text-button;
-        margin: $min-o 0 0 0;
+        margin: 5px 0 0 0;
+    }
+
+    .validation-summary-errors {
+        font-size: 0.7em;
+        line-height: 0.7em;
+    }
+
+    .field-validation-error {
+        font-size: 0.6em;
+        line-height: 0.6em;
     }
 }
 
-.editor-container {
+.validation-summary-errors, .field-validation-error {
+    color: $error-color;
+}
+
+.editor {
     display: flex;
     flex-direction: column;
 
     .editor-menubar {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
-        grid-gap: $min-mid-o;
-        margin: 0 0 $min-mid-o 0;
+        flex-wrap: wrap;
+        font-size: 1.2em;
+        grid-gap: 10px;
+        line-height: 1.2em;
+        margin: 0 0 10px 0;
     }
 
     .menubar-group {
         display: flex;
-        gap: $min-mid-o;
+        gap: 10px;
 
         button {
             @extend %blue-icon-button;
-            @include square-size($editbar-icon-fs);
+            height: 1.2em;
+            width: 1.2em;
         }
     }
 
-    .rightline-menubar {
+    .menubar-rightline {
         @extend .menubar-group;
-        border-right: 1px solid $font-c;
-        padding: 0 $min-mid-o 0 0;
+        border-right: 1px solid $base-color;
+        padding: 0 10px 0 0;
     }
-}
 
-.editor-container {
     .editor-textarea {
-        height: $editor-textarea-h;
+        height: 390px;
         overflow-x: hidden;
         overflow-y: auto;
         white-space: pre-wrap;
@@ -227,66 +433,116 @@
     }
 }
 
-.upload-storage-file-container {
+.file-upload {
+    align-items: center;
+    align-self: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
-    margin: 0 0 $max-o + $min-mid-o 0;
-    align-self: center;
+    margin: 0 0 20px + 10px 0;
 
-    .upload-storage-file-button {
+    .file-upload-button {
         @extend %blue-icon-button;
-        @include square-size($file-toolbar-icon-fs);
-        margin: 0 0 0 $min-mid-o;
+        height: 1.2em;
+        margin: 0 0 0 10px;
+        width: 1.2em;
+    }
+
+    .file-upload-button:disabled {
+        background-color: $disabled-color;
+    }
+
+    .file-upload-label {
+        font-family: $title-font;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        text-transform: uppercase;
+    }
+
+    .file-upload-text {
+        background-color: $background-color;
+        border-radius: $border-radius;
+    }
+
+    .file-upload-text:hover {
+        cursor: pointer;
+    }
+}
+
+.storage-edit-file-name {
+    border-radius: $border-radius;
+    border: 1px solid $base-color;
+
+    &:focus {
+        outline: 1px solid $base-color;
+    }
+
+    &.input-validation-error, &.input-validation-error:focus {
+        border: 1px solid $error-color;
     }
 }
 
 .storage {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($storage-min-w, 1fr));
-    grid-gap: $max-o;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     .storage-file {
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        align-items: center;
         max-height: 100%;
         overflow: hidden;
-        padding: $min-mid-o;
+        padding: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .storage-image {
+        box-shadow: $shadow;
+        max-height: 170px;
+        max-width: 170px;
         object-fit: contain;
-        max-height: $storage-min-image-w;
-        max-width: $storage-min-image-w;
     }
 
-    .storage-file-name {
-        margin: $min-o + 1 0 0 0;
-        max-height: $text-tl + 0em;
+    .storage-filename {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 6px 0 0 0;
+        max-height: 1.5em;
         overflow: hidden;
-        padding: 0 $min-o 0 $min-o;
+        padding: 0 5px 0 5px;
         text-align: center;
-        width: $storage-edit-file-name-w;
+        width: 70%;
     }
 }
 
-#edit-file-name-input {
-    margin: $min-o 0 0 0;
+#filename-input {
     display: none;
+    margin: 5px 0 0 0;
+    text-align: left;
 }
 
-#storage-file-toolbar {
+#storage-toolbar {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
     display: flex;
+    font-size: 1.2em;
+    line-height: 1.2em;
     position: absolute;
     visibility: hidden;
     z-index: 20;
 
     button {
         @extend %icon-button;
-        @include square-size($file-toolbar-icon-fs);
+        background-color: $background-color;
+        border-radius: $border-radius;
+        height: 1.2em;
+        width: 1.2em;
     }
 
     #edit-name-button {
@@ -294,8 +550,9 @@
     }
 }
 
-#black-hover {
+#window-hover {
     background-color: black;
+    display: none;
     height: 100vh;
     left: 0;
     opacity: 0.4;
@@ -303,7 +560,6 @@
     top: 0;
     width: 100vw;
     z-index: 19;
-    display: none;
 }
 
 #enlarge-image-container {
@@ -320,103 +576,121 @@
     }
 
     #enlarge-image {
+        max-height: 410px;
+        max-width: 410px;
         object-fit: contain;
-        max-height: $enlarge-storage-image-w;
-        max-width: $enlarge-storage-image-w;
     }
 
-    #close-enlarge-image-button {
+    #close-enlarge-image {
         @extend %icon-button;
-        @include square-size($storage-close-enlarge-fs);
+        height: 1.2em;
         position: absolute;
         right: 0;
         top: 0;
+        width: 1.2em;
     }
 }
 
-.edit-portfolio-container {
+.portfolio-edit {
     display: flex;
     flex-direction: column;
 
-    .edit-portfolio-work {
-        display: grid;
-        grid-template-columns: $edit-portfolio-col-w 1fr;
+    .portfolio-edit-work {
         align-items: center;
-        margin: 0 0 $content-o 0;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        margin: 0 0 40px 0;
     }
 
-    .edit-portfolio-image-container {
+    .portfolio-edit-image-container {
+        align-items: center;
         display: grid;
+        grid-gap: 20px;
         justify-content: center;
-        align-items: center;
-        max-width: $edit-portfolio-image-w;
-        max-height: $edit-portfolio-image-w;
-        grid-gap: $max-o;
+        max-height: 230px;
+        max-width: 230px;
     }
 
-    .edit-portfolio-image {
-        object-fit: contain;
-        max-width: inherit;
+    .portfolio-edit-image {
+        box-shadow: $shadow;
         max-height: inherit;
+        max-width: inherit;
+        object-fit: contain;
     }
 
-    .edit-portfolio-text {
+    .portfolio-edit-text {
         display: grid;
+        font-size: 1em;
+        line-height: 1.5em;
     }
 
-    .edit-portfolio-title {
+    .portfolio-edit-title {
+        font-family: $title-font;
         font-weight: 400;
-        margin: 0 0 $mid-o 0;
         height: 1.5em;
+        margin: 0 0 15px 0;
     }
 
-    .edit-portfolio-description {
+    .portfolio-edit-description {
         margin: 0;
         text-align: justify;
         max-height: 7.5em;
     }
 
-    .edit-portfolio-comment {
+    .portfolio-edit-comment {
         font-style: italic;
         height: 1.6em;
     }
 
-    .edit-portfolio-comment {
-        margin: $max-o 0 0 0;
+    .portfolio-edit-comment {
+        margin: 20px 0 0 0;
     }
 
-    .edit-portfolio-comment, .edit-portfolio-description, .edit-portfolio-title {
+    .portfolio-edit-comment, .portfolio-edit-description, .portfolio-edit-title {
         white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 }
 
-.edit-work-container {
+.add-work-button {
+    background-color: $background-color;
+}
+
+.edit-work {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     align-items: center;
-    grid-gap: $content-o;
+    grid-gap: 40px;
     overflow: hidden;
 
     .edit-work-image-container {
-        @include grid-center;
+        align-content: center;
+        align-items: center;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
     }
 
     .edit-work-image {
+        align-self: start;
+        box-shadow: $shadow;
         max-height: 95%;
         max-width: 90%;
-        align-self: start;
     }
 
     .delete-work-button {
         @extend %blue-text-button;
         width: max-content;
-        margin: $min-mid-o 0 0 0;
+        margin: 10px 0 0 0;
     }
 
     .edit-work-label {
-        margin: 0 0 $min-mid-o 0;
+        color: $base-color;
+        font-family: $title-font;
+        font-size: 1.2em;
+        line-height: 1.2em;
+        margin: 0 0 10px 0;
     }
 
     .edit-work-input-group {
@@ -427,58 +701,33 @@
     .edit-work-input {
         display: flex;
         flex-direction: column;
-        margin: 0 0 $mid-o 0;
+        margin: 0 0 15px 0;
+
+        label:hover {
+            cursor: pointer;
+        }
     }
 
     .edit-work-button {
         @extend %blue-text-button;
-        margin: $min-mid-o 0 0 0;
+        margin: 10px 0 0 0;
         align-self: center;
     }
 }
 
-.edit-portfolio-toolbar {
+.portfolio-edit-toolbar {
     display: flex;
     justify-content: center;
-    margin: 0 0 $max-o + $min-mid-o 0;
+    margin: 0 0 20px + 10px 0;
 
-    .add-work-link {
+    .portfolio-edit-add {
+        background-color: $background-color;
+        border-radius: $border-radius;
+        font-family: $title-font;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        padding: 10px 20px;
         text-decoration: none;
-        padding: $input-file-p;
+        text-transform: uppercase;
     }
-}
-
-/*------------------ TOP BAR --------------------*/
-.top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 0 $max-o $max-o 0;
-}
-
-.language-dropdown-container {
-    @extend %dropdown-container;
-
-    .dropdown-menu {
-        min-width: $dropdown-language-w;
-    }
-}
-
-.profile-dropdown-container {
-    @extend %dropdown-container;
-    margin: 0 0 0 $max-o;
-
-    .dropdown-menu {
-        min-width: $dropdown-profile-w;
-    }
-}
-
-.logout-button {
-    @extend %button-base;
-    padding: 0;
-}
-
-.login-link {
-    margin: 0 0 0 $max-o;
-    padding: 0 0 0 $min-o;
 }

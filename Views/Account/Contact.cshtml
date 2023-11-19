@@ -5,7 +5,7 @@
     ViewData["Title"] = Localizer["EditContact"];
 }
 <form method="post" asp-action="Contact">
-    <div class="edit-contacts-container">
+    <div class="contacts-edit">
         <div class="contact-input-container">
             <div class="contact-input-group">
                 <div class="contact-input">
@@ -33,6 +33,6 @@
                 }
             </div>
         </div>
-        <button asp-action="SaveContacts" class="contact-input-button" type="submit">@Localizer["Save"]</button>
+        <button asp-action="SaveContacts" type="submit" class="contact-input-button">@Localizer["Save"]</button>
     </div>
 </form>
