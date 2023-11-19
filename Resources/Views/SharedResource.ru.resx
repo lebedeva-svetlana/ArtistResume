@@ -117,11 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddWork" xml:space="preserve">
+    <value>Добавить работу</value>
+  </data>
   <data name="Biography" xml:space="preserve">
     <value>Биография</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>Контакты</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить работу</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="EditBiography" xml:space="preserve">
+    <value>Редактировать биографию</value>
+  </data>
+  <data name="EditContact" xml:space="preserve">
+    <value>Редактировать контакты</value>
+  </data>
+  <data name="EditPortfolio" xml:space="preserve">
+    <value>Редактировать портфолио</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Личный кабинет</value>
+  </data>
+  <data name="LanguageTitle" xml:space="preserve">
+    <value>RU</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Войти</value>
@@ -132,7 +162,22 @@
   <data name="Portfolio" xml:space="preserve">
     <value>Портфолио</value>
   </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Вернуться</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Выберите файл</value>
+  </data>
   <data name="Storage" xml:space="preserve">
     <value>Хранилище</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Заголовок</value>
   </data>
 </root>

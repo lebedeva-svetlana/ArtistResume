@@ -1,4 +1,5 @@
-﻿@inject IViewLocalizer Localizer
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @model EditWorkViewModel
 
 @{
@@ -9,24 +10,24 @@
     <div class="edit-work">
         <div class="edit-work-image-container">
             <img src="@src" class="edit-work-image">
-            <button asp-action="DeleteWork" type="submit" class="delete-work-button">@Localizer["Delete"]</button>
+            <button asp-action="DeleteWork" type="submit" class="delete-work-button">@SharedLocalizer["Delete"]</button>
             <input asp-for="@Model.Id" type="hidden">
         </div>
         <div>
             <div class="edit-work-input-group">
                 <div class="edit-work-input">
-                    <label asp-for="@Model.Name" class="edit-work-label">@Localizer["Title"]</label>
+                    <label asp-for="@Model.Name" class="edit-work-label">@SharedLocalizer["Title"]</label>
                     <input asp-for="@Model.Name" />
                 </div>
                 <div class="edit-work-input">
-                    <label asp-for="@Model.Description" class="edit-work-label">@Localizer["Description"]</label>
+                    <label asp-for="@Model.Description" class="edit-work-label">@SharedLocalizer["Description"]</label>
                     <textarea asp-for="@Model.Description" rows="7"></textarea>
                 </div>
                 <div class="edit-work-input">
-                    <label asp-for="@Model.Comment" class="edit-work-label">@Localizer["Comment"]</label>
+                    <label asp-for="@Model.Comment" class="edit-work-label">@SharedLocalizer["Comment"]</label>
                     <input asp-for="@Model.Comment" />
                 </div>
-                <button asp-action="EditWork" type="submit" class="edit-work-button">@Localizer["Save"]</button>
+                <button asp-action="EditWork" type="submit" class="edit-work-button">@SharedLocalizer["Save"]</button>
             </div>
             <input asp-for="@Model.ImageSrc" hidden />
         </div>

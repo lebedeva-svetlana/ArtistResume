@@ -1,10 +1,9 @@
 ﻿@using Resume.Views;
-@inject IViewLocalizer Localizer
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @model StorageViewModel
 
 @{
-    ViewData["Title"] = Localizer["Storage"];
+    ViewData["Title"] = SharedLocalizer["Storage"];
 }
 
 <form method="post"
@@ -15,7 +14,7 @@
                    type="file"
                    accept="image/*"
                    class="change-upload-name-js">
-            <span class="file-upload-text">@Localizer["SelectFile"]</span>
+            <span class="file-upload-text">@SharedLocalizer["SelectFile"]</span>
             <span class="file-upload-name"></span>
         </label>
         <button asp-action="UploadFile"

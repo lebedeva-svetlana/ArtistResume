@@ -1,8 +1,9 @@
-﻿@inject IViewLocalizer Localizer
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @model EditContactViewModel
 
 @{
-    ViewData["Title"] = Localizer["EditContact"];
+    ViewData["Title"] = SharedLocalizer["EditContact"];
 }
 <form method="post" asp-action="Contact">
     <div class="contacts-edit">
@@ -33,6 +34,6 @@
                 }
             </div>
         </div>
-        <button asp-action="SaveContacts" type="submit" class="contact-input-button">@Localizer["Save"]</button>
+        <button asp-action="SaveContacts" type="submit" class="contact-input-button">@SharedLocalizer["Save"]</button>
     </div>
 </form>

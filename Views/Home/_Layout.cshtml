@@ -1,6 +1,6 @@
 ﻿@using Resume.Views;
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
-@inject IViewLocalizer Localizer
+
 @model BaseViewModel
 
 <!DOCTYPE html>
@@ -50,13 +50,13 @@
                 <div class="profile">
                     <div class="dropdown">
                         <div class="dropdown-title">
-                            <div>@Localizer["Profile"]</div>
+                            <div>@SharedLocalizer["Profile"]</div>
                             <div class="fa fa-sort-desc dropdown-icon"></div>
                         </div>
                         <div class="dropdown-menu">
                             <div class="dropdown-choice">
                                 <a asp-controller="Account"
-                                   asp-action="Portfolio">@Localizer["Edit"]</a>
+                                   asp-action="Portfolio">@SharedLocalizer["Edit"]</a>
                             </div>
                             <div class="dropdown-choice">
                                 <form asp-controller="Authorization"

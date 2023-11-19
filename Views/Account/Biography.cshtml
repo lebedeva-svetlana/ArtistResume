@@ -1,8 +1,9 @@
-﻿@inject IViewLocalizer Localizer
+﻿@using Resume.Views;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @model EditBiographyViewModel
 
 @{
-    ViewData["Title"] = Localizer["EditBiography"];
+    ViewData["Title"] = SharedLocalizer["EditBiography"];
 }
 
 <form asp-action="SaveBiography" method="post">
