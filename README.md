@@ -27,5 +27,5 @@ Website template for an artist resume. Work in progress.
 ## Credits
 
 Third-party libraries:
-- [markdig](https://github.com/xoofx/markdig) licensed with BSD-2-Clause.
-- [masonry](https://github.com/desandro/masonry) licensed with MIT.
+- [Markdig](https://github.com/xoofx/markdig) licensed with BSD-2-Clause.
+- [Masonry](https://github.com/desandro/masonry) licensed with MIT.
